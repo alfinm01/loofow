@@ -1,12 +1,12 @@
 # Loofow: Looking for what
 
-Sebuah aplikasi pencarian dan penemuan barang hilang\
-Tugas besar mata kuliah IF3152 - Rekayasa Perangkat Lunak STI\\
-Anggota kelompok:\
-1. Firdausi Aditya Darmawan - 18217001\
-2. Yudhistira Qasthari Putra - 18217003\
-3. Luthfi Eko Trinowo - 18217018\
-4. Muhammad Isfan Rahadi - 18217019\
+Sebuah aplikasi pencarian dan penemuan barang hilang
+Tugas besar mata kuliah IF3152 - Rekayasa Perangkat Lunak STI
+Anggota kelompok:
+1. Firdausi Aditya Darmawan - 18217001
+2. Yudhistira Qasthari Putra - 18217003
+3. Luthfi Eko Trinowo - 18217018
+4. Muhammad Isfan Rahadi - 18217019
 5. Alfian Maulana Ibrahim - 18217038
 
 > 
@@ -22,7 +22,7 @@ $ composer install
 
 ## Run server
 
-Using XAMPP, run Apache (and MySQL) from XAMPP control panel\
+Using XAMPP, run Apache (and MySQL) from XAMPP control panel
 or
 
 ``` bash
