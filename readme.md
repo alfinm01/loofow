@@ -1,6 +1,6 @@
 # Loofow: Looking for what
 
-Sebuah aplikasi pencarian dan penemuan barang hilang
+Sebuah aplikasi pencarian dan penemuan barang hilang\
 Tugas besar mata kuliah IF3152 - Rekayasa Perangkat Lunak STI
 Anggota kelompok:
 1. Firdausi Aditya Darmawan - 18217001
