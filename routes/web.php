@@ -12,5 +12,23 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/home');
+});
+Route::get('/search', function () {
+    return view('pages/search');
+});
+Route::get('/post', function () {
+    return view('pages/post');
+});
+Route::get('/login', function () {
+    return view('pages/login');
+});
+Route::get('/register', function () {
+    return view('pages/register');
+});
+Route::get('/dashboard', function () {
+    return view('pages/dashboard');
+});
+Route::get('/create-post', function () {
+    return view('pages/create-post');
 });
