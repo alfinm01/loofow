@@ -22,8 +22,8 @@ $ composer install
 
 ## Run server
 
-Using XAMPP, run Apache (and MySQL) from XAMPP control panel
-or
+- Using XAMPP, run Apache and MySQL from XAMPP control panel thus run on **localhost/loofow/public**
+- or using php artisan:
 
 ``` bash
 # serve at default localhost:8000
