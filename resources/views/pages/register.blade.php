@@ -33,6 +33,86 @@
 	    <div class="title m-b-md">
 	        Register Page
 	    </div>
+		<div class="container"> 
+			<div class="section"> 
+				<div class="field"> 
+					<div class="label"> 
+						First Name
+					</div>
+					<div class="level"> 
+						<div class="level-left">
+							<div class="control">
+								<input class="input" type="text" placeholder="First Name"></> 	
+							</div>
+						</div>
+					</div>
+					<div class="label">	
+						Last Name
+					</div>
+					<div class="level"> 
+						<div class="level-left">
+							<div class="control">
+								<input class="input" type="text" placeholder="Last Name"></> 	
+							</div>
+						</div>
+					</div>
+					<div class="label">	
+						E-mail
+					</div>
+					<div class="level"> 
+						<div class="level-left">
+							<div class="control">
+								<input class="input" type="text" placeholder="E-mail"></> 	
+							</div>
+						</div>
+					</div>
+					<div class="label">	
+						Username
+					</div>
+					<div class="level"> 
+						<div class="level-left">
+							<div class="control">
+								<input class="input" type="text" placeholder="e.g. alfinm01"></> 	
+							</div>
+						</div>
+					</div>
+					<div class="label">	
+						Password
+					</div>
+					<div class="level"> 
+						<div class="level-left">
+							<div class="control">
+								<input class="input" type="password" placeholder="password"></input> 	
+								<p class="help"> 
+									Password must contain at least 1 uppercase, 1 lowercase, 1 number
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="label">	
+						Confirm Password
+					</div>
+					<div class="level"> 
+						<div class="level-left">
+							<div class="control">
+								<input class="input" type="password" placeholder="Re-type your password"></input> 	
+							</div>
+						</div>
+					</div>
+					<div class="links">
+						<a href="{{url('/')}}">
+							<div class="level"> 
+								<div class="level-left">
+									<div class="control"> 
+										<div class="button is-success">
+											Register
+										</div> 
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
 
 	    <div class="links">
 	        <a href="{{ url('/search') }}">Search</a>

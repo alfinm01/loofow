@@ -30,11 +30,53 @@
 
 @section('content')
 	<div class="content">
-	    <div class="title m-b-md">
+		<div class="title m-b-md">
 	        Login Page
 	    </div>
+		<div class="container"> 
+			<div class="section"> 
+				<div class="field"> 
+					<div class="label"> 
+						Username
+					</div>
+					<div class="level"> 
+						<div class="level-left">
+							<div class="control">
+								<input class="input" type="text" placeholder="e.g. alfinm01"></> 	
+							</div>
+						</div>
+					</div>
+					<div class="label">
+						Password
+					</div>
+					<div class="level"> 
+						<div class="level-left">
+							<div class="control">
+								<input class="input" type="password" placeholder="insert password"></> 	
+							</div>
+						</div>
+					</div>
+					<div class="links">
+						<a href="{{url('/')}}">
+							<div class="level"> 
+								<div class="level-left">
+									<div class="control"> 
+										<div class="button is-success"> 
+											Login 
+										</div> 
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				
+				
+	
+	
+	   
 
-	    <div class="links">
+		<div class="links">
 	        <a href="{{ url('/search') }}">Search</a>
 	        <a href="{{ url('/post') }}">Post</a>
 	        <a href="{{ url('/login') }}">Login</a>
