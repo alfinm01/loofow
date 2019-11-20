@@ -11,24 +11,30 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('pages/home');
 });
+
 Route::get('/search', function () {
     return view('pages/search');
 });
+
 Route::get('/post', function () {
     return view('pages/post');
 });
-Route::get('/login', function () {
-    return view('pages/login');
-});
-Route::get('/register', function () {
-    return view('pages/register');
-});
+
 Route::get('/dashboard', function () {
     return view('pages/dashboard');
-});
+})->name('dashboard')->middleware('auth');
+
+Route::get('/profile', function () {
+    return view('pages/profile');
+})->middleware('auth');
+
 Route::get('/create-post', function () {
     return view('pages/create-post');
-});
+})->middleware('auth');
+
+Route::get('/home', 'HomeController@index')->name('home');
