@@ -14,20 +14,20 @@
 	        </div>
 	        <div id="navbarMenu" class="navbar-menu">
 	            <div class="navbar-end">
-	                <a class="navbar-item is-active">
+	                <a href="{{url('/')}}" class="navbar-item is-active">
 	                        Home
 	                    </a>
-	                <a class="navbar-item">
-	                        Examples
+	                <a class="navbar-item is-active" href="{{url('/dashboard')}}">
+	                        Dashboard
 	                    </a>
-	                <a class="navbar-item">
-	                        Features
+	                <a class="navbar-item is-active" href="{{url('/create-post')}}">
+	                        Post
 	                    </a>
-	                <a class="navbar-item">
-	                        Team
+	                <a class="navbar-item is-active" href="{{url('/login')}}">
+	                        Login
 	                    </a>
-	                <a class="navbar-item">
-	                        Archives
+	                <a class="navbar-item is-active" href="{{url('/register')}}">
+	                        Register
 	                    </a>
 	                <a class="navbar-item">
 	                        Help
