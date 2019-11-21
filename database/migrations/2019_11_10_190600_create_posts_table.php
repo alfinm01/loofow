@@ -19,9 +19,9 @@ class CreatePostsTable extends Migration
             $table->string('name');
             $table->string('type');
             $table->string('category');
-            $table->bigInteger('province');
-            $table->bigInteger('city');
-            $table->bigInteger('district');
+            $table->string('province');
+            $table->string('city');
+            $table->string('district');
             $table->integer('date');
             $table->integer('month');
             $table->integer('year');
