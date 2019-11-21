@@ -29,18 +29,43 @@
 @endsection
 
 @section('content')
-	<div class="content">
-	    <div class="title m-b-md">
-	        Post Page
-	    </div>
-
-	    <div class="links">
-	        <a href="{{ url('/search') }}">Search</a>
-	        <a href="{{ url('/post') }}">Post</a>
-	        <a href="{{ url('/login') }}">Login</a>
-	        <a href="{{ url('/register') }}">Register</a>
-	        <a href="{{ url('/dashboard') }}">Dashboard</a>
-	        <a href="{{ url('/create-post') }}">Create post</a>
-	    </div>
+<div class="container">
+	<p class="title is-1">Nama Barang</p>
+	<p class="subtitle is-3">Kategori</p>
+	<div class="columns">
+		<div class="column is-one-third">
+			<figure class="image is square">
+				<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png">
+			</figure>
+		</div>
+		<div class="column">
+			<p class="subtitle is-5"><strong>Provinsi:</strong> Jawa Barat</p>
+			<p class="subtitle is-5"><strong>Kota:</strong> Bandung</p>
+			<p class="subtitle is-5"><strong>Jalan:</strong> Cisitu</p>
+			<p class="subtitle is-5"><strong>Tanggal Ditemukan/Hilang:</strong> tgl-bulan-tahun</p>
+			<p class="subtitle is-5"><strong>Deskripsi:</strong></p>
+			<p class="subtitle is-5">Blablablabla</p>
+		</div>
+		<div class="column">
+			<div class="tile is-ancestor">
+				<div class="tile is-vertical is-8">
+					<div class="tile">
+					<div class="tile is-parent is-vertical">
+						<article class="tile is-child notification is-primary">
+						<p class="title">Kontak Penemu</p>
+						<p class="text has-text-weight-bold">Nama User</p>
+						<p class="text">Jenis</p>
+						<p class="text">Id/Nomor</p>
+						</article>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="buttons">
+				<button class="button is-warning"><strong>Claim</strong></button>
+			</div>
+		</div>
 	</div>
+</div>
+
 @endsection
