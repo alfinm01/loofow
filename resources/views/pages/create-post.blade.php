@@ -52,11 +52,11 @@
 						Jenis
 					<div class="control">
 						<label class="radio">
-						<input type="radio" name="type">
+						<input value="Lost" type="radio" name="type">
 						Lost
 						</label>
 						<label class="radio">
-						<input type="radio" name="type">
+						<input value= "Found" type="radio" name="type">
 						Found
 						</label>
 					</div>

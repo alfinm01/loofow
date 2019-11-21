@@ -2,32 +2,34 @@
 
 namespace App\Http\Controllers\Post;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 
-class ListPost extends Controllers {
+class ListPost extends Controller {
     public function listAllItems() {
         //ambil data
-        $post = DB::table('post')->get();
+        $post = DB::table('posts')->get();
 
         //pass to view -- Asumsi readpost dilakuin di bagian home
-        return view('home', ['post' => $post]);
+        return view('home', ['posts' => $post]);
     }
 
     public function listByKeywords(Request $request) {
         //ambil data dengan keyword tertentu
-        $post = DB::table('post')->where('name', $request->keyword)->get();
+        $post = DB::table('posts')->where('name', $request->keyword)->get();
 
         //Menampilkan hasil data dengan keywords tertentu
-        return view('detail',['post' => $post]);
+        return view('pages/search',['posts' => $post, 'keyword' => $request->keyword]);
     }
 
     public function listByUser(Request $request) {
         //ambil data berdasarkan user_id
-        $post = DB::table('post')->where('user_id', $request->user_id)->get();
+        $post = DB::table('posts')->where('user_id', Auth::id())->get();
 
         //Menampilkan hasil data dengan keywords tertentu
-        return view('dashboard',['post' => $post]);
+        return view('dashboard',['posts' => $post]);
     }
 }
