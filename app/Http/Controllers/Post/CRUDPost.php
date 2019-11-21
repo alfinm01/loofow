@@ -57,12 +57,7 @@ class CRUDPost extends Controllers {
             'color' => $request->color,
             'model' => $request->model,
             'contact_type' => $request->contact_type,
-<<<<<<< HEAD
-            'contact' => $request->contact,
-            'status' => $request->status
-=======
             'contact' => $request->contact
->>>>>>> luth_crud
         ]);
 
         //mengembalikan ke tampilan dashboard
