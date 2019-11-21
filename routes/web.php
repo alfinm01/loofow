@@ -33,6 +33,8 @@ Route::get('/profile', function () {
     return view('pages/profile');
 })->middleware('auth');
 
+Route::post('task/template', 'Post\CRUDPost@create')->name('create-post');
+
 Route::get('/create-post', function () {
     return view('pages/create-post');
 })->middleware('auth');

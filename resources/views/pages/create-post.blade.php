@@ -32,6 +32,8 @@
 <div class="container">
 	<p class="title is-1">Create a Post</p>
 	<div class="container"> 
+		<form class="create-post-form" method="POST" action="{{ route('create-post') }}">
+		{{ csrf_field() }}
 			<div class="section"> 
 				<div class="field"> 
 					<div class="label"> 
@@ -40,10 +42,11 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="Nama Barang" name="name"></> 	
+								<input class="input" type="text" placeholder="Nama Barang" name="name"> 	
 							</div>
 						</div>
 					</div>
+				</div>
 				<div class="field">
 					<div class="label"> 
 						Jenis
@@ -61,14 +64,14 @@
 				<div class="field">
 					<label class="label">Kategori</label>
 					<div class="control">
-						<div class="select" name="category">
-						<select>
-							<option value="Dompet">Dompet</option>
-							<option value="Elektronik">Elektronik</option>
-							<option value="Kunci">Kunci</option>
-							<option value="Pakaian">Pakaian</option>
-							<option value="Surat Pribadi">Surat Pribadi</option>
-						</select>
+						<div class="select">
+							<select name="category">
+								<option value="Dompet">Dompet</option>
+								<option value="Elektronik" selected>Elektronik</option>
+								<option value="Kunci">Kunci</option>
+								<option value="Pakaian">Pakaian</option>
+								<option value="Surat Pribadi">Surat Pribadi</option>
+							</select>
 						</div>
 					</div>
 				</div>
@@ -78,7 +81,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="e.g. Jawa Barat" name="province"></> 	
+								<input class="input" type="text" placeholder="e.g. Jawa Barat" name="province">	
 							</div>
 						</div>
 					</div>
@@ -88,7 +91,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="e.g. Bandung" name="city"></> 	
+								<input class="input" type="text" placeholder="e.g. Bandung" name="city">	
 							</div>
 						</div>
 					</div>
@@ -98,15 +101,15 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="e.g. Cisitu" name="district"></> 	
+								<input class="input" type="text" placeholder="e.g. Cisitu" name="district">	
 							</div>
 						</div>
 					</div>
 					<div class="field">
 					<label class="label">Tanggal Ditemukan/Hilang</label>
 					<div class="control">
-						<div class="select" name="date">
-						<select>
+						<div class="select">
+						<select name="date">
 						@for ($i = 1; $i < 32; $i++)
 							<option value={{$i}}>{{$i}}</option>
 						@endfor
@@ -116,8 +119,8 @@
 					<div class="field">
 					<label class="label">Bulan Ditemukan/Hilang</label>
 					<div class="control">
-						<div class="select" name="month">
-						<select>
+						<div class="select">
+						<select name="month">
 						@for ($i = 1; $i < 13; $i++)
 							<option value={{$i}}>{{$i}}</option>
 						@endfor
@@ -127,8 +130,8 @@
 					<div class="field">
 					<label class="label">Tahun Ditemukan/Hilang</label>
 					<div class="control">
-						<div class="select name="year"">
-						<select>
+						<div class="select">
+						<select name="year">
 						@for ($i = 2016; $i < 2020; $i++)
 							<option value={{$i}}>{{$i}}</option>
 						@endfor
@@ -141,7 +144,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="e.g. Biru" name="color"></> 	
+								<input class="input" type="text" placeholder="e.g. Biru" name="color">	
 							</div>
 						</div>
 					</div>
@@ -151,7 +154,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="e.g. Samsung" name="model"></> 	
+								<input class="input" type="text" placeholder="e.g. Samsung" name="model">	
 							</div>
 						</div>
 					</div>
@@ -167,7 +170,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="e.g. HP" name="contact_type"></> 	
+								<input class="input" type="text" placeholder="e.g. HP" name="contact_type">	
 							</div>
 						</div>
 					</div>
@@ -177,19 +180,23 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="e.g. 08111111111" name="contact"></> 	
+								<input class="input" type="text" placeholder="e.g. 08111111111" name="contact">	
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="field is-grouped">
 					<div class="control">
-						<button class="button is-link">Submit</button>
+						<button type="submit" class="button is-link">Submit</button>
 					</div>
 					<div class="control">
-						<button class="button is-link is-light">Cancel</button>
+						<a href="{{url('/')}}">
+							<button class="button is-link is-light">Cancel</button>
+						</a>
 					</div>
 				</div>
-				</div>
+			</div>
+		</form>
+	</div>
 </div>
 @endsection
