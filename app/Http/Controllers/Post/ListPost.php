@@ -27,11 +27,7 @@ class ListPost extends Controller {
 
     public function listByUser() {
         //ambil data berdasarkan user_id
-<<<<<<< HEAD
-        $post = DB::table('post')->where('user_id', Auth::id())->get();
-=======
         $post = DB::table('posts')->where('user_id', Auth::id())->get();
->>>>>>> 619e09b170b5d9bcd7af430c7061946d01b7d834
 
         //Menampilkan hasil data dengan keywords tertentu
         return view('dashboard',['posts' => $post]);
