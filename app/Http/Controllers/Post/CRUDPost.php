@@ -77,6 +77,6 @@ class CRUDPost extends Controller {
 	    $post = DB::table('posts')->where('id',$id)->get();
         
         //passing data ke front-end 
-	    return view('/pages/post',['post' => $post]);
+	    return view('/pages/post', ['post' => $post]);
     }
 }
