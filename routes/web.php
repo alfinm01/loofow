@@ -36,5 +36,3 @@ Route::get('/profile', function () {
 Route::get('/create-post', function () {
     return view('pages/create-post');
 })->middleware('auth');
-
-Route::get('/home', 'HomeController@index')->name('home');
