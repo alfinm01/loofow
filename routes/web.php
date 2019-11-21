@@ -38,3 +38,7 @@ Route::get('/create-post', function () {
 })->middleware('auth');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/claim-post', 'PostController@claimPosts');
+
+Route::get('/get-claimed-post', 'PostController@getClaimedPosts');
