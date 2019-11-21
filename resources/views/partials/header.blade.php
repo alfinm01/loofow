@@ -18,9 +18,6 @@
 	                <a href="{{url('/')}}" class="navbar-item is-active">
 	                        Home
 	                    </a>
-	                <a href="{{url('/search')}}" class="navbar-item is-active">
-	                        Search
-	                    </a>
 	                @guest
 	                <a class="navbar-item is-active" href="{{url('/login')}}">
 	                        Login
