@@ -10,10 +10,23 @@ use Auth;
 
 class CRUDPost extends Controller {
     public function create(Request $request) {
+        //setting image dengan asumsi bahwa gambar required
+        // Get image file
+        $image = $request->file('item_image');
+        // Make a image name based on user name and current timestamp
+        $name = Str::slug($request->input('name')).'_'.time();
+        // Define folder path
+        $folder = '/uploads/images/';
+        // Make a file path where image will be stored [ folder path + file name + file extension]
+        $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
+        // Upload image
+        $this->uploadOne($image, $folder, 'public', $name);
+        
         //ambil data dari frontend
         DB::table('posts')->insert([
             'user_id' => Auth::id(),
             'name' => $request->name,
+            'image' => $filePath,
             'type' => $request->type,
             'category' => $request->category,
             'province' => $request->province,
