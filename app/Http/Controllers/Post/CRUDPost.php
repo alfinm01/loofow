@@ -59,6 +59,9 @@ class CRUDPost extends Controllers {
             'contact_type' => $request->contact_type,
             'contact' => $request->contact
         ]);
+
+        //mengembalikan ke tampilan dashboard
+        return redirect('/dashboard');
     }
 
     public function deletePost($id) {
