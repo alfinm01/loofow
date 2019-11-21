@@ -22,7 +22,7 @@ class ReadPost extends Controllers {
         ]);
 
         //redirect ke halaman dimana pengguna dapat melihat postnya
-        return redirect('/dashboard')
+        return redirect('/dashboard');
     }
 
     public function delete($id) {
@@ -30,7 +30,7 @@ class ReadPost extends Controllers {
         DB::table('post')->where('post_id', $id)->delete();
 
         //mengembalikan view
-        return redirect('/dashboard')
+        return redirect('/dashboard');
     }
 
     //Update belum masuk
