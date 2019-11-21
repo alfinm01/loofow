@@ -10,7 +10,6 @@ use Auth;
 
 class CRUDPost extends Controller {
     public function create(Request $request) {
-        //ambil data dari frontend
         DB::table('posts')->insert([
             'user_id' => Auth::id(),
             'name' => $request->name,

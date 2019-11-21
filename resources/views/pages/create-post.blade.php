@@ -164,6 +164,19 @@
 							<textarea class="textarea" placeholder="Deskripsi" name="description"></textarea>
 						</div>
 					</div>
+					<div class="field">
+						<label class="label">Upload Foto Barang</label>
+						<div class="file is-primary">
+							<label class="file-label">
+							<input class="file-input" type="file" name="foto">
+							<span class="file-cta">
+								<span class="file-label">
+								Upload
+								</span>
+							</span>
+							</label>
+						</div>
+					</div>
 					<div class="label">	
 						Jenis Kontak
 					</div>
