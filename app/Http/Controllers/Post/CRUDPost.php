@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\Post;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 
-class CRUDPost extends Controllers {
+class CRUDPost extends Controller {
     public function create(Request $request) {
         //ambil data dari frontend
-        DB::table('post')->insert([
-            'id' => $request->id,
-            'user_id' => $request->user_id,
+        DB::table('posts')->insert([
+            'user_id' => Auth::id(),
             'name' => $request->name,
             'type' => $request->type,
             'category' => $request->category,
@@ -29,7 +30,7 @@ class CRUDPost extends Controllers {
         ]);
 
         //redirect ke halaman dimana pengguna dapat melihat postnya
-        return redirect('/dashboard');
+        return redirect('dashboard');
     }
 
     //function yang dijalankan ketika button edit ditekan
