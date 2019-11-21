@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 
 class ListPost extends Controllers {
@@ -24,9 +25,9 @@ class ListPost extends Controllers {
         return view('detail',['post' => $post]);
     }
 
-    public function listByUser(Request $request) {
+    public function listByUser() {
         //ambil data berdasarkan user_id
-        $post = DB::table('post')->where('user_id', $request->user_id)->get();
+        $post = DB::table('post')->where('user_id', Auth::id())->get();
 
         //Menampilkan hasil data dengan keywords tertentu
         return view('dashboard',['post' => $post]);
