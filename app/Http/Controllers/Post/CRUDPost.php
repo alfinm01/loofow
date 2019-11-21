@@ -64,6 +64,9 @@ class CRUDPost extends Controllers {
             'contact' => $request->contact
 >>>>>>> luth_crud
         ]);
+
+        //mengembalikan ke tampilan dashboard
+        return redirect('/dashboard');
     }
 
     public function deletePost($id) {
