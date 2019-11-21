@@ -19,9 +19,7 @@ Route::get('/', function () {
 
 Route::get('/search', 'Post\ListPost@listByKeywords');
 
-Route::get('/post/{id}', function () {
-    return view('pages/post');
-});
+Route::get('/post/{id}', 'Post\CRUDPost@getById');
 
 Route::get('/dashboard', function () {
     return view('pages/dashboard');

@@ -67,6 +67,9 @@
                         <div class="content">
                             {{ $post->description }}
                         </div>
+                        <a href="{{url('/post/' . $post->id)}}">
+                         <button class="button is-black">See</button>
+                        </a>
                     </div>
                 </div>
             </div>
