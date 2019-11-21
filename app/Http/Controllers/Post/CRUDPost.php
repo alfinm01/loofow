@@ -6,17 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 
-class ReadPost extends Controllers {
-    public function read() {
-        //ambil data
-        $post = DB::table('post')->get();
-
-        //pass to view -- Asumsi readpost dilakuin di bagian home
-        return view('home', ['post' => $post]);
-    }
-
+class CRUDPost extends Controllers {
     public function create(Request $request) {
-        //atribut dari post belum masuk
+        //ambil data dari frontend
         DB::table('post')->insert([
             'id' => $request->id,
             'user_id' => $request->user_id,
@@ -32,9 +24,8 @@ class ReadPost extends Controllers {
             'description' => $request->description,
             'color' => $request->color,
             'model' => $request->model,
-            'contract_type' => $request->contract_type,
-            'contract' => $request->contract,
-            'solved_at' => $request->solved_at
+            'contact_type' => $request->contact_type,
+            'contact' => $request->contact,
         ]);
 
         //redirect ke halaman dimana pengguna dapat melihat postnya
@@ -51,7 +42,7 @@ class ReadPost extends Controllers {
     }
 
     //function ini akan dijalankan ketika akan dilakukan pembaruan data
-    public function update (request $request) {
+    public function updatePost (Request $request) {
         DB::table('post')->where('id', $request->id)->update([
             'name' => $request->name,
             'type' => $request->type,
@@ -65,19 +56,17 @@ class ReadPost extends Controllers {
             'description' => $request->description,
             'color' => $request->color,
             'model' => $request->model,
-            'contract_type' => $request->contract_type,
-            'contract' => $request->contract,
-            'solved_at' => $request->solved_at
+            'contact_type' => $request->contact_type,
+            'contact' => $request->contact,
+            'status' => $request->status
         ]);
     }
 
-    public function delete($id) {
+    public function deletePost($id) {
         //Delete atribut dengan melihat id
         DB::table('post')->where('id', $id)->delete();
 
         //mengembalikan view
         return redirect('/dashboard');
     }
-
-    //Update belum masuk
 }
