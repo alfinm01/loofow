@@ -25,7 +25,7 @@ class ListPost extends Controller {
         return view('pages/search',['posts' => $post, 'keyword' => $request->keyword]);
     }
 
-    public function listByUser(Request $request) {
+    public function listByUser() {
         //ambil data berdasarkan user_id
         $post = DB::table('posts')->where('user_id', Auth::id())->get();
 
