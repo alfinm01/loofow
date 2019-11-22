@@ -11,12 +11,12 @@ use Auth;
 class ListPost extends Controller {
     public function listAllItems() {
         //ambil data
-        $postAsc = DB::table('posts')->orderBy('year', 'asc')->orderBy('month', 'asc')->orderBy('date', 'asc')->get();
+        $postHLost = DB::table('posts')->where('type', '=' , 'Lost')->orderBy('year', 'asc')->orderBy('month', 'asc')->orderBy('date', 'asc')->get();
 
-        $postDsc = DB::table('posts')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('date', 'desc')->get();
+        $postHFound = DB::table('posts')->where('type', '=' , 'Lost')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('date', 'desc')->get();
 
         //pass to view -- Asumsi readpost dilakuin di bagian home
-        return view('home', ['postsAsc' => $postAsc, 'postsDsc' => $postDsc]);
+        return view('pages/home', ['postHLost' => $postHLost, 'postHFound' => $postHFound]);
     }
 
     public function listByKeywords(Request $request) {

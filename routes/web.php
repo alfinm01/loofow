@@ -13,9 +13,8 @@
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('pages/home');
-});
+Route::get('/', 'Post\ListPost@listAllItems');
+
 
 Route::get('/search', 'Post\ListPost@listByKeywords');
 
@@ -45,4 +44,4 @@ Route::post('/claim-post', 'PostController@claimPosts');
 
 Route::get('/get-claimed-post', 'PostController@getClaimedPosts');
 
-Route::put('/edit-post/{id}', 'Post\CRUDPost@editRespons')->name('edit-post');
+Route::get('/edit-post/{id}', 'Post\CRUDPost@editRespons')->name('edit-post');

@@ -32,7 +32,7 @@
 <div class="container">
 	<p class="title is-1">Create a Post</p>
 	<div class="container"> 
-		<form class="create-post-form" method="POST" action="{{ route('create-post') }}">
+		<form class="create-post-form" method="POST" action="{{ route('create-post') }}" enctype="multipart/form-data">
 		{{ csrf_field() }}
 			<div class="section"> 
 				<div class="field"> 
@@ -75,6 +75,8 @@
 						</div>
 					</div>
 				</div>
+				<div class="columns">
+ 				 <div class="column">
 					<div class="label">	
 						Provinsi
 					</div>
@@ -85,6 +87,8 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="column">
 					<div class="label">	
 						Kota
 					</div>
@@ -95,6 +99,8 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="column">
 					<div class="label">	
 						Jalan
 					</div>
@@ -105,8 +111,11 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				</div>
+				<label class="label">Waktu Ditemukan</label>
 					<div class="field">
-					<label class="label">Tanggal Ditemukan/Hilang</label>
+					<label class="label">Tanggal</label>
 					<div class="control">
 						<div class="select">
 						<select name="date">
@@ -118,7 +127,7 @@
 						</div>
 					</div>
 					<div class="field">
-					<label class="label">Bulan Ditemukan/Hilang</label>
+					<label class="label">Bulan</label>
 					<div class="control">
 						<div class="select">
 						<select name="month">
@@ -130,7 +139,7 @@
 						</div>
 					</div>
 					<div class="field">
-					<label class="label">Tahun Ditemukan/Hilang</label>
+					<label class="label">Tahun</label>
 					<div class="control">
 						<div class="select">
 						<select name="year">
@@ -141,6 +150,8 @@
 						</select>
 						</div>
 					</div>
+					<div class="columns">
+ 					<div class="column">
 					<div class="label">	
 						Warna
 					</div>
@@ -151,6 +162,8 @@
 							</div>
 						</div>
 					</div>
+					</div>
+					<div class="column">
 					<div class="label">	
 						Model
 					</div>
@@ -161,6 +174,8 @@
 							</div>
 						</div>
 					</div>
+					</div>
+					</div>
 					<div class="field">
 						<label class="label">Deskripsi</label>
 						<div class="control">
@@ -169,17 +184,12 @@
 					</div>
 					<div class="field">
 						<label class="label">Upload Foto Barang</label>
-						<div class="file is-primary">
-							<label class="file-label">
-							<input class="file-input" type="file" name="image">
-							<span class="file-cta">
-								<span class="file-label">
-								Upload
-								</span>
-							</span>
-							</label>
-						</div>
+						<p class="control">
+							<input type="file" name="image">
+						</p>
 					</div>
+					<div class="columns">
+					<div class="column">
 					<div class="label">	
 						Jenis Kontak
 					</div>
@@ -190,6 +200,8 @@
 							</div>
 						</div>
 					</div>
+					</div>
+					<div class="column">
 					<div class="label">	
 						ID/Nomor
 					</div>
@@ -199,6 +211,8 @@
 								<input class="input" type="text" placeholder="e.g. 08111111111" name="contact">	
 							</div>
 						</div>
+					</div>
+					</div>
 					</div>
 					<div class="label">	
 						Pertanyaan Verifikasi
@@ -210,6 +224,8 @@
 							</div>
 						</div>
 					</div>
+					<div class="columns">
+					<div class="column">
 					<div class="label">	
 						Pilihan A
 					</div>
@@ -220,6 +236,8 @@
 							</div>
 						</div>
 					</div>
+					</div>
+					<div class="column">
 					<div class="label">	
 						Pilihan B
 					</div>
@@ -230,6 +248,8 @@
 							</div>
 						</div>
 					</div>
+					</div>
+					<div class="column">
 					<div class="label">	
 						Pilihan C
 					</div>
@@ -240,15 +260,24 @@
 							</div>
 						</div>
 					</div>
+					</div>
+					</div>
 					<div class="label">	
 						Jawaban
 					</div>
-					<div class="level"> 
-						<div class="level-left">
-							<div class="control">
-								<input class="input" type="text" placeholder="Pilihan Benar" name="answer">	
-							</div>
-						</div>
+					<div class="control">
+ 						 <label class="radio">
+   							 <input value="a" type="radio" name="answer">
+    							A
+ 						 </label>
+ 						 <label class="radio">
+    						<input value="b" type="radio" name="answer">
+    							B
+  						</label>
+						<label class="radio">
+    						<input value="c" type="radio" name="answer">
+    							C
+  						</label>
 					</div>
 				</div>
 				<div class="field is-grouped">
