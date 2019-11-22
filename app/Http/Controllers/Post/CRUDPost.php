@@ -14,7 +14,6 @@ class CRUDPost extends Controller {
         //setting image dengan asumsi bahwa gambar required
         // Get image file
         $image = $request->file('image');
-        $passing = $image->getClientOriginalName();
         // Make a image name based on user name and current timestamp
         $name = Str::slug($request->input('name')).'_'.time();
         // Define folder path
@@ -68,7 +67,7 @@ class CRUDPost extends Controller {
 	    $post = DB::table('posts')->where('id',$id)->get();
         
         //passing data ke front-end 
-	    return view('update',['posts' => $post]);
+	    return view('/pages/edit-post',['posts' => $post]);
     }
 
     //function ini akan dijalankan ketika akan dilakukan pembaruan data

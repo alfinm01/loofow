@@ -13,21 +13,15 @@
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('pages/home');
-});
+Route::get('/', 'Post\ListPost@listAllItems');
+
 
 Route::get('/search', 'Post\ListPost@listByKeywords');
 
 Route::get('/post/{id}', 'Post\CRUDPost@getById');
 
-Route::get('/dashboard', function () {
-    return view('pages/dashboard');
-})->name('dashboard')->middleware('auth');
-
-Route::post('/dashboard', function () {
-    return view('pages/dashboard');
-})->name('dashboard')->middleware('auth');
+Route::get('/dashboard', 'Post\ListPost@listByUser');
+    
 
 Route::get('/profile', function () {
     return view('pages/profile');
@@ -49,3 +43,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/claim-post', 'PostController@claimPosts');
 
 Route::get('/get-claimed-post', 'PostController@getClaimedPosts');
+
+Route::get('/edit-post/{id}', 'Post\CRUDPost@editRespons')->name('edit-post');
