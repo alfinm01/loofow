@@ -32,7 +32,7 @@
 <div class="container">
 	<p class="title is-1">Edit your Post</p>
 	<div class="container"> 
-		<form class="create-post-form" method="POST" action="{{ route('create-post') }}">
+		<form class="edit-post-form" method="PUT" action="{{ route('edit-post') }}">
 		{{ csrf_field() }}
 			<div class="section"> 
 				<div class="field"> 
@@ -42,7 +42,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="Namabarang" name="name"> 	
+								<input class="input" type="text" placeholder="Nama Barang" name="name"> 	
 							</div>
 						</div>
 					</div>

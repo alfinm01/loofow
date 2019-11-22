@@ -29,11 +29,15 @@ class ListPost extends Controller {
 
     public function listByUser() {
         //ambil data berdasarkan user_id
+<<<<<<< HEAD
+=======
+
+>>>>>>> 91faf3aaaf655b830492e608a6f9e286ef2fcf2c
         $postFound = DB::table('posts')->where('user_id', Auth::id())->where('type', '=', 'Found')->orderBy('year', 'asc')->orderBy('month', 'asc')->orderBy('date', 'asc')->get();
         
         $postLost = DB::table('posts')->where('user_id', Auth::id())->where('type', '=', 'Lost')->orderBy('year', 'asc')->orderBy('month', 'asc')->orderBy('date', 'asc')->get();
         
         //Menampilkan hasil data dengan keywords tertentu
-        return view('dashboard',['postsFound' => $postFound, 'postsLost' => $postLost]);
+        return view('pages/dashboard',['postFound' => $postFound, 'postLost' => $postLost]);
     }
 }
