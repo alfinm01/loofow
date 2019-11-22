@@ -33,19 +33,16 @@ Route::get('/profile', function () {
     return view('pages/profile');
 })->middleware('auth');
 
-Route::post('task/template', 'Post\CRUDPost@create')->name('create-post');
+Route::post('task/template', 'Post\CRUDPost@create')->name('create-post')->middleware('auth');
 
 Route::get('/create-post', function () {
     return view('pages/create-post');
 })->middleware('auth');
 
-Route::post('/verification', function () {
-    return view('pages/verification');
-});
-
+Route::get('/verification/{id}', 'Post\Verifikasi@postVerifikasi')->middleware('auth')->name('verification');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/claim-post', 'PostController@claimPosts');
+Route::post('/claim-post/{id}', 'PostController@claimPosts')->middleware('auth');
 
-Route::get('/get-claimed-post', 'PostController@getClaimedPosts');
+Route::get('/get-claimed-post', 'PostController@getClaimedPosts')->middleware('auth');
