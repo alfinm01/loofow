@@ -19,7 +19,7 @@ class ListPost extends Controller {
 
     public function listByKeywords(Request $request) {
         //ambil data dengan keyword tertentu
-        $post = DB::table('posts')->where('name', 'like', '%$request->keyword%')->get();
+        $post = DB::table('posts')->where('name', 'like', '%' . $request->keyword . '%')->get();
 
         //Menampilkan hasil data dengan keywords tertentu
         return view('pages/search',['posts' => $post, 'keyword' => $request->keyword]);
