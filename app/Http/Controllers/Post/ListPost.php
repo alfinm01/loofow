@@ -13,11 +13,7 @@ class ListPost extends Controller {
         //ambil data
         $postHLost = DB::table('posts')->where('type', '=' , 'Lost')->where('status', '=' , '0')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('date', 'desc')->get();
 
-<<<<<<< HEAD
-        $postHFound = DB::table('posts')->where('type', '=' , 'Found')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('date', 'desc')->get();
-=======
         $postHFound = DB::table('posts')->where('type', '=' , 'Found')->where('status', '=' , '0')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('date', 'desc')->get();
->>>>>>> luth_crud
 
         //pass to view -- Asumsi readpost dilakuin di bagian home
         return view('pages/home', ['postHLost' => $postHLost, 'postHFound' => $postHFound]);
