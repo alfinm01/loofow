@@ -36,7 +36,7 @@
 	{{ csrf_field() }}
 	<div class="columns">
 		<div class="column is-one-third">
-			<figure class="image is square">
+			<figure class="image">
 				<img src="{{ url($post[0]->image) }}">
 			</figure>
 		</div>
@@ -51,7 +51,7 @@
 		<div class="column">
 			<p class="subtitle is-5"><strong>ID Barang:</strong> {{ $post[0]->id }}</p>
 			<p class="subtitle is-5"><strong>Deskripsi:</strong></p>
-			<p class="subtitle is-5">{{ $post[0]->description }}</p>
+			<div class="subtitle is-5">{{ $post[0]->description }}</div>
 			<div class="buttons">
 			<a href="{{url('/verification/' . $post[0]->id)}}">
 				<button type="submit" class="button is-warning"><strong>Claim</strong></button>
