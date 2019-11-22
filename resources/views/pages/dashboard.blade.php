@@ -52,7 +52,8 @@
 				</div>
 			</div>
 			<br>
-            <div class="row columns">
+            <div class="row columns is-multicolumn">
+				@foreach ($posts as $post)
                 <div class="column is-one-third">
 					<div class="card large">
 						<div class="card-image">
@@ -63,27 +64,32 @@
 						<div class="card-content">
 							<div class="media">
 								<div class="media-content">
-									<p class="title is-4 no-padding">Judul</p>
-									<p class="subtitle is-6">Tipe</p>
+									<p class="title is-4 no-padding">{{ $post->name }}</p>
+									<p class="subtitle is-6">{{ $post->type }}</p>
 								</div>
 							</div>
 							<div class="content">
-								Deskripsi
+								{{ $post->description }}
 							</div>
 							<nav class="level"> 
 								<div class="level-left">
 									<div class="level-item">
-										<button class="button is-black">See</button>
+										<a href="{{url('/post/' . $post->id)}}">
+											<button class="button is-black">See</button>
+										</a>
 									</div>
 									<div class="level-item">
-										<button class="button is-black">Edit</button>
+										<a href="{{url('/edit-post/' . $post->id)}}">
+											<button class="button is-black">Edit</button>
+										</a>
 									</div>
 								</div>
 							</nav>
 						</div>
 					</div>
 				</div>
-                <div class="column is-one-third">
+				@endforeach
+                <!--<div class="column is-one-third">
 					<div class="card large">
 						<div class="card-image">
 							<figure class="image">
@@ -132,7 +138,7 @@
             <!-- End Developers -->
 
             <!-- Staff -->
-			<div class="hero is-info is-small"> 
+			<!--<div class="hero is-info is-small"> 
 				<div class="hero-body">
 					<div class="container"> 
 						<h1 class="title"> 
@@ -211,6 +217,7 @@
 				</div>
             </div>
             <!-- End Staff -->
+			</div>
         </div>
     </div>
 @endsection
