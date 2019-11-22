@@ -37,8 +37,8 @@ Route::get('/verification/{id}', 'Post\Verifikasi@postVerifikasi')->middleware('
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/claim-post/{id}', 'PostController@claimPosts')->middleware('auth');
+Route::post('/claim-post/{id}', 'Post\PostController@claimPosts')->middleware('auth');
 
-Route::get('/get-claimed-post', 'PostController@getClaimedPosts');
+Route::get('/get-claimed-post', 'Post\PostController@getClaimedPosts');
 
 Route::get('/edit-post/{id}', 'Post\CRUDPost@editRespons')->name('edit-post');

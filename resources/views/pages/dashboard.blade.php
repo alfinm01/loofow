@@ -160,6 +160,50 @@
 				</div>
 				@endforeach
 			</div>
+			<br>
+			<div class="hero is-info is-small"> 
+				<div class="hero-body">
+					<div class="container"> 
+						<h1 class="title"> 
+							Claim
+						</h1>
+					</div>
+				</div>
+			</div>
+			<br>
+            <div class="row columns is-multicolumn">
+				@foreach ($postClaim as $post)
+                <div class="column is-one-third">
+					<div class="card large">
+						<div class="card-image">
+							<figure class="image">
+								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content">
+									<p class="title is-4 no-padding">{{ $post->name }}</p>
+									<p class="subtitle is-6">{{ $post->type }}</p>
+								</div>
+							</div>
+							<div class="content">
+								{{ $post->description }}
+							</div>
+							<nav class="level"> 
+								<div class="level-left">
+									<div class="level-item">
+										<a href="{{url('/post/' . $post->id)}}">
+											<button class="button is-black">See</button>
+										</a>
+									</div>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+				@endforeach
+			</div>
         </div>
 	</div>
 @endsection
