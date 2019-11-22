@@ -61,7 +61,7 @@
 					<div class="column is-one-third">
 						<div class="card large">
 							<div class="card-image">
-								<figure class="image is square">
+								<figure class="image is-square">
 									<img src="{{ url($post->image) }}" alt="Image">
 								</figure>
 							</div>
@@ -73,7 +73,7 @@
 									</div>
 								</div>
 								<div class="content">
-									{{ $post->description }}
+									{{ substr($post->description, 0, 20) . "..." }}
 								</div>
 								<nav class="level"> 
 
@@ -127,7 +127,7 @@
                 <div class="column is-one-third">
 					<div class="card large">
 						<div class="card-image">
-							<figure class="image is square">
+							<figure class="image is-square">
 							<img src="{{ url($post->image) }}" alt="Image">
 							</figure>
 						</div>
@@ -139,7 +139,7 @@
 								</div>
 							</div>
 							<div class="content">
-								{{ $post->description }}
+								{{ substr($post->description, 0, 20) . "..." }}
 							</div>
 							<nav class="level"> 
 								<div class="level-left">
@@ -176,7 +176,7 @@
                 <div class="column is-one-third">
 					<div class="card large">
 						<div class="card-image">
-							<figure class="image is square">
+							<figure class="image is-square">
 							<img src="{{ url($post->image) }}" alt="Image">
 							</figure>
 						</div>
@@ -188,7 +188,7 @@
 								</div>
 							</div>
 							<div class="content">
-								{{ $post->description }}
+								{{substr($post->description, 0, 20) . "..." }}
 							</div>
 							<nav class="level"> 
 								<div class="level-left">
