@@ -17,13 +17,9 @@ Route::get('/', function () {
     return view('pages/home');
 });
 
-Route::get('/search', function () {
-    return view('pages/search');
-});
+Route::get('/search', 'Post\ListPost@listByKeywords');
 
-Route::get('/post', function () {
-    return view('pages/post');
-});
+Route::get('/post/{id}', 'Post\CRUDPost@getById');
 
 Route::get('/dashboard', function () {
     return view('pages/dashboard');
