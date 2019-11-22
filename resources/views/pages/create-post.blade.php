@@ -110,8 +110,9 @@
 					<div class="control">
 						<div class="select">
 						<select name="date">
-						@for ($i = 1; $i < 32; $i++)
-							<option value={{$i}}>{{$i}}</option>
+							<option>-</option>
+							@for ($i = 1; $i < 32; $i++)
+								<option value={{$i}}>{{$i}}</option>
 						@endfor
 						</select>
 						</div>
@@ -121,8 +122,9 @@
 					<div class="control">
 						<div class="select">
 						<select name="month">
-						@for ($i = 1; $i < 13; $i++)
-							<option value={{$i}}>{{$i}}</option>
+							<option>-</option>
+							@for ($i = 1; $i < 13; $i++)
+								<option value={{$i}}>{{$i}}</option>
 						@endfor
 						</select>
 						</div>
@@ -132,8 +134,9 @@
 					<div class="control">
 						<div class="select">
 						<select name="year">
-						@for ($i = 2016; $i < 2020; $i++)
-							<option value={{$i}}>{{$i}}</option>
+							<option>-</option>
+							@for ($i = 2016; $i < 2020; $i++)
+								<option value={{$i}}>{{$i}}</option>
 						@endfor
 						</select>
 						</div>

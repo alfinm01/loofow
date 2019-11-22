@@ -35,7 +35,7 @@
 	<div class="columns">
 		<div class="column is-one-third">
 			<figure class="image is square">
-				<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png">
+				<img src="https://pbs.twimg.com/media/EHym1D7UYAEGyd4?format=jpg&name=small">
 			</figure>
 		</div>
 		<div class="column">
