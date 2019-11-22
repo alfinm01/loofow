@@ -52,11 +52,6 @@ class CRUDPost extends Controller {
             'answer' => $request->answer,
         ]);
 
-
-        if ($request->hasFile('image')) {
-            dd("Berhasil bangsat");
-        }
-
         //redirect ke halaman dimana pengguna dapat melihat postnya
         return redirect('dashboard');
     }
