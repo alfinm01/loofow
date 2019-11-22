@@ -43,6 +43,15 @@ class CRUDPost extends Controller {
             'contact' => $request->contact,
         ]);
 
+        DB::table('posts_verification')->insert([
+            'id' => Auth::id(),
+            'question' => $request->question,
+            'a' => $request->a,
+            'b' => $request->b,
+            'c' => $request->c,
+            'answer' => $request->answer,
+        ]);
+
         //redirect ke halaman dimana pengguna dapat melihat postnya
         return redirect('dashboard');
     }

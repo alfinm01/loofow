@@ -14,8 +14,8 @@ class CreatePostsVerificationTable extends Migration
     public function up()
     {
         Schema::create('posts_verification', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('post_id')->unsigned();
+            $table->bigIncrements('post_id');
+            $table->bigInteger('id')->unsigned();
             $table->string('question');
             $table->string('a');
             $table->string('b');
