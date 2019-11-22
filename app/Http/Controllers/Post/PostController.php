@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Claim;
 use DB;
+use Auth;
 
 class PostController extends Controller
 { 
@@ -41,24 +42,28 @@ class PostController extends Controller
         }
     }
 
-    public function claimPosts(Request $request)
+    public function claimPosts(Request $request, $id)
     {
-        
-        $real_answer = DB::table('posts_verification')->where('post_id',$request->post_id)->value('answer');
+        $real_answer = DB::table('posts_verification')->where('post_id',$id)->value('answer');
 
         if ($real_answer == $request->answer)
         {
-            $response = [
-                'success'   => true,
-                'data'      => 'Claim success',
-            ];
-            return view('pages/dashboard');
+            DB::table('claims')->insert([
+                'post_id' => $id,
+                'user_id' => Auth::id(),
+                                
+            ]);
+            DB::table('posts')->where('id', $request->id)->update([
+                'status' => true
+            ]);
+            return redirect('dashboard');
+            // return view('pages/dashboard');
         } else {
-            $response = [
-                'success'   => false,
-                'data'      => 'Claim failed',
-            ];
-            return response()->json($response, 403);
+            $verification = DB::table('posts_verification')->where('post_id', $id)->get();
+
+        //mengembalikan view
+        return view('/pages/verification', ['verification' => $verification]);
+            // return response()->json($response, 403);
         }
     } 
 }
