@@ -78,8 +78,11 @@
 							<div class="content">
 								{{ $post->description }}
 							</div>
-							<button class="button is-black">Details</button>
-							</a>
+							<a href="{{url('/post/' . $post->id)}}">
+
+											<button class="button is-black">Details</button>
+
+										</a>
 						</div>
 					</div>
 				</div>
@@ -115,7 +118,10 @@
 							<div class="content">
 								{{ $post->description }}
 							</div>
-							<button class="button is-black">Details</button>
+							<a href="{{url('/post/' . $post->id)}}">
+
+											<button class="button is-black">Details</button>
+
 							</a>
 						</div>
 					</div>
