@@ -33,7 +33,9 @@ Route::get('/create-post', function () {
     return view('pages/create-post');
 })->middleware('auth');
 
+
 Route::get('/verification/{id}', 'Post\Verifikasi@postVerifikasi')->middleware('auth')->name('verification');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -41,4 +43,8 @@ Route::post('/claim-post/{id}', 'Post\PostController@claimPosts')->middleware('a
 
 Route::get('/get-claimed-post', 'Post\PostController@getClaimedPosts');
 
-Route::get('/edit-post/{id}', 'Post\CRUDPost@editRespons')->name('edit-post');
+
+Route::get('/edit-post/{id}', 'Post\CRUDPost@editRespons');
+
+Route::post('/edit-post/{id})', 'Post\CRUDPost@updatePost')->name('edit-post');
+
