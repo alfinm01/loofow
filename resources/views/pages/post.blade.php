@@ -37,7 +37,7 @@
 	<div class="columns">
 		<div class="column is-one-third">
 			<figure class="image is square">
-				<img src="https://pbs.twimg.com/media/EHym1D7UYAEGyd4?format=jpg&name=small">
+				<img src="{{ url($post[0]->image) }}">
 			</figure>
 		</div>
 		<div class="column">

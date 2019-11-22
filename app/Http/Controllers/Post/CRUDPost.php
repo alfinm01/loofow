@@ -5,30 +5,30 @@ namespace App\Http\Controllers\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Auth;
 
 
 class CRUDPost extends Controller {
     public function create(Request $request) {
-        /*
         //setting image dengan asumsi bahwa gambar required
         // Get image file
-        $image = $request->file('item_image');
+        $image = $request->file('image');
+        $passing = $image->getClientOriginalName();
         // Make a image name based on user name and current timestamp
         $name = Str::slug($request->input('name')).'_'.time();
         // Define folder path
-        $folder = '/uploads/images/';
+        $folder = 'uploads/images/';
         // Make a file path where image will be stored [ folder path + file name + file extension]
         $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
         // Upload image
-        $this->uploadOne($image, $folder, 'public', $name);
-        */
+        $image->move($folder, $filePath);
 
         //ambil data dari frontend
         DB::table('posts')->insert([
             'user_id' => Auth::id(),
             'name' => $request->name,
-            //'image' => $filePath,
+            'image' => $filePath,
             'type' => $request->type,
             'category' => $request->category,
             'province' => $request->province,
@@ -52,6 +52,11 @@ class CRUDPost extends Controller {
             'c' => $request->c,
             'answer' => $request->answer,
         ]);
+
+
+        if ($request->hasFile('image')) {
+            dd("Berhasil bangsat");
+        }
 
         //redirect ke halaman dimana pengguna dapat melihat postnya
         return redirect('dashboard');
