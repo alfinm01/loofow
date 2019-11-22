@@ -55,7 +55,7 @@ class ListPost extends Controller {
         $post = DB::table('posts')->where('user_id', Auth::id())->where('type', '=', 'Found')->get();
 
         //Menampilkan hasil data dengan keywords tertentu
-        return view('dashboard',['posts' => $post]);
+        return view('pages/dashboard',['posts' => $post]);
     }
 
     public function listByUserLost() {

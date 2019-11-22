@@ -63,7 +63,7 @@ class CRUDPost extends Controller {
 	    $post = DB::table('posts')->where('id',$id)->get();
         
         //passing data ke front-end 
-	    return view('update',['posts' => $post]);
+	    return view('/pages/edit-post',['posts' => $post]);
     }
 
     //function ini akan dijalankan ketika akan dilakukan pembaruan data
