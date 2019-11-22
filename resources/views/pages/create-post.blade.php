@@ -110,8 +110,9 @@
 					<div class="control">
 						<div class="select">
 						<select name="date">
-						@for ($i = 1; $i < 32; $i++)
-							<option value={{$i}}>{{$i}}</option>
+							<option>-</option>
+							@for ($i = 1; $i < 32; $i++)
+								<option value={{$i}}>{{$i}}</option>
 						@endfor
 						</select>
 						</div>
@@ -121,8 +122,9 @@
 					<div class="control">
 						<div class="select">
 						<select name="month">
-						@for ($i = 1; $i < 13; $i++)
-							<option value={{$i}}>{{$i}}</option>
+							<option>-</option>
+							@for ($i = 1; $i < 13; $i++)
+								<option value={{$i}}>{{$i}}</option>
 						@endfor
 						</select>
 						</div>
@@ -132,8 +134,9 @@
 					<div class="control">
 						<div class="select">
 						<select name="year">
-						@for ($i = 2016; $i < 2020; $i++)
-							<option value={{$i}}>{{$i}}</option>
+							<option>-</option>
+							@for ($i = 2016; $i < 2020; $i++)
+								<option value={{$i}}>{{$i}}</option>
 						@endfor
 						</select>
 						</div>
@@ -194,6 +197,56 @@
 						<div class="level-left">
 							<div class="control">
 								<input class="input" type="text" placeholder="e.g. 08111111111" name="contact">	
+							</div>
+						</div>
+					</div>
+					<div class="label">	
+						Pertanyaan Verifikasi
+					</div>
+					<div class="level"> 
+						<div class="level-left">
+							<div class="control">
+								<input class="input" type="text" placeholder="Pertanyaan" name="question">	
+							</div>
+						</div>
+					</div>
+					<div class="label">	
+						Pilihan A
+					</div>
+					<div class="level"> 
+						<div class="level-left">
+							<div class="control">
+								<input class="input" type="text" placeholder="Pilihan" name="a">	
+							</div>
+						</div>
+					</div>
+					<div class="label">	
+						Pilihan B
+					</div>
+					<div class="level"> 
+						<div class="level-left">
+							<div class="control">
+								<input class="input" type="text" placeholder="Pilihan" name="b">	
+							</div>
+						</div>
+					</div>
+					<div class="label">	
+						Pilihan C
+					</div>
+					<div class="level"> 
+						<div class="level-left">
+							<div class="control">
+								<input class="input" type="text" placeholder="Pilihan" name="c">	
+							</div>
+						</div>
+					</div>
+					<div class="label">	
+						Jawaban
+					</div>
+					<div class="level"> 
+						<div class="level-left">
+							<div class="control">
+								<input class="input" type="text" placeholder="Pilihan Benar" name="answer">	
 							</div>
 						</div>
 					</div>
