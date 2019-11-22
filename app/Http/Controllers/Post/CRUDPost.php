@@ -5,15 +5,15 @@ namespace App\Http\Controllers\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Auth;
 
 
 class CRUDPost extends Controller {
     public function create(Request $request) {
-        /*
         //setting image dengan asumsi bahwa gambar required
         // Get image file
-        $image = $request->file('item_image');
+        $image = $request->file('image');
         // Make a image name based on user name and current timestamp
         $name = Str::slug($request->input('name')).'_'.time();
         // Define folder path
@@ -22,13 +22,13 @@ class CRUDPost extends Controller {
         $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
         // Upload image
         $this->uploadOne($image, $folder, 'public', $name);
-        */
+        
 
         //ambil data dari frontend
         DB::table('posts')->insert([
             'user_id' => Auth::id(),
             'name' => $request->name,
-            //'image' => $filePath,
+            'image' => $filePath,
             'type' => $request->type,
             'category' => $request->category,
             'province' => $request->province,
