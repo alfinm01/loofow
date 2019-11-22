@@ -10,8 +10,6 @@ use Auth;
 
 class CRUDPost extends Controller {
     public function create(Request $request) {
-<<<<<<< HEAD
-=======
         //setting image dengan asumsi bahwa gambar required
         // Get image file
         $image = $request->file('item_image');
@@ -25,7 +23,6 @@ class CRUDPost extends Controller {
         $this->uploadOne($image, $folder, 'public', $name);
         
         //ambil data dari frontend
->>>>>>> luth_crud
         DB::table('posts')->insert([
             'user_id' => Auth::id(),
             'name' => $request->name,
