@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostImagesTable extends Migration
+class CreatePostsVerificationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreatePostImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_images', function (Blueprint $table) {
+        Schema::create('posts_verification', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('post_id')->unsigned();
-            $table->string('url');
+            $table->string('question');
+            $table->string('a');
+            $table->string('b');
+            $table->string('c');
+            $table->string('answer');
 
             $table->foreign('post_id')->references('id')->on('posts');
         });
@@ -29,6 +33,6 @@ class CreatePostImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_images');
+        Schema::dropIfExists('posts_verification');
     }
 }

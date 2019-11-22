@@ -29,18 +29,31 @@
 @endsection
 
 @section('content')
-	<div class="content">
-	    <div class="title m-b-md">
-	        Post Page
-	    </div>
-
-	    <div class="links">
-	        <a href="{{ url('/search') }}">Search</a>
-	        <a href="{{ url('/post') }}">Post</a>
-	        <a href="{{ url('/login') }}">Login</a>
-	        <a href="{{ url('/register') }}">Register</a>
-	        <a href="{{ url('/dashboard') }}">Dashboard</a>
-	        <a href="{{ url('/create-post') }}">Create post</a>
-	    </div>
+<div class="container">
+	<p class="title is-1">{{ $post[0]->name }}</p>
+	<p class="subtitle is-3">{{ $post[0]->category }}</p>
+	<div class="columns">
+		<div class="column is-one-third">
+			<figure class="image is square">
+				<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png">
+			</figure>
+		</div>
+		<div class="column">
+			<p class="subtitle is-5"><strong>Provinsi:</strong> {{ $post[0]->province }}</p>
+			<p class="subtitle is-5"><strong>Kota:</strong> {{ $post[0]->city }}</p>
+			<p class="subtitle is-5"><strong>Jalan:</strong> {{ $post[0]->district }}</p>
+			<p class="subtitle is-5"><strong>Tanggal Ditemukan/Hilang:</strong> {{ $post[0]->date }}-{{ $post[0]->month }}-{{ $post[0]->year }}</p>
+			<p class="subtitle is-5"><strong>Warna:</strong> {{ $post[0]->color }}</p>
+			<p class="subtitle is-5"><strong>Model:</strong> {{ $post[0]->model }}</p>
+		</div>
+		<div class="column">
+			<p class="subtitle is-5"><strong>Deskripsi:</strong></p>
+			<p class="subtitle is-5">{{ $post[0]->description }}</p>
+			<div class="buttons">
+				<button class="button is-warning"><strong>Claim</strong></button>
+			</div>
+		</div>
 	</div>
+</div>
+
 @endsection

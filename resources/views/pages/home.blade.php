@@ -36,19 +36,21 @@
             <span class="flow-3"></span>
         </div>
         <div class="section">
+          <form class="search" method="get" action="{{ url('search') }}">
             <div class="box">
                 <div class="field has-addons">
                     <div class="control is-expanded">
-                        <input class="input has-text-centered" type="search" placeholder="» » » » » » find me « « « « « «">
+                        <input class="input has-text-centered" type="search" placeholder="» » » » » » find me « « « « « «" name="keyword">
                     </div>
                     <div class="control">
-                        <a class="button is-info">Search</a>
+                    <button type="submit" class="button is-link">Search</button>
                     </div>
                 </div>
             </div>
+        </form>
             <!-- Developers -->
 			<div class="level">
-				<div class="level-right">
+				<div class="level">
 					<div class="hero is-info"> 
 						<div class="hero-body">
 							<div class="container"> 
@@ -147,14 +149,12 @@
 
             <!-- Staff -->
 			<div class="level">
-				<div class="level-right">
-					<div class="hero is-info"> 
-						<div class="hero-body">
-							<div class="container"> 
-								<h1 class="title"> 
-									Found
-								</h1>
-							</div>
+				<div class="hero is-info"> 
+					<div class="hero-body">
+						<div class="container"> 
+							<h1 class="title"> 
+								Found
+							</h1>
 						</div>
 					</div>
 				</div>

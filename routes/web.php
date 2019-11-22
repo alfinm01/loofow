@@ -17,13 +17,9 @@ Route::get('/', function () {
     return view('pages/home');
 });
 
-Route::get('/search', function () {
-    return view('pages/search');
-});
+Route::get('/search', 'Post\ListPost@listByKeywords');
 
-Route::get('/post', function () {
-    return view('pages/post');
-});
+Route::get('/post/{id}', 'Post\CRUDPost@getById');
 
 Route::get('/dashboard', 'HomeController@dummy1')->name('dashboard')->middleware('auth');
 
@@ -31,6 +27,14 @@ Route::get('/profile', function () {
     return view('pages/profile');
 })->middleware('auth');
 
+Route::post('task/template', 'Post\CRUDPost@create')->name('create-post');
+
 Route::get('/create-post', function () {
     return view('pages/create-post');
 })->middleware('auth');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/claim-post', 'PostController@claimPosts');
+
+Route::get('/get-claimed-post', 'PostController@getClaimedPosts');
