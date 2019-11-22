@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-	Create Post | Loofow
+  Edit Post | Loofow
 @endsection
 
 @section('style')
@@ -32,7 +32,7 @@
 <div class="container">
 	<p class="title is-1">Edit your Post</p>
 	<div class="container"> 
-		<form class="edit-post-form" method="PUT" action="{{ route('edit-post') }}">
+		<form class="edit-post-form" method="POST" action="{{ route('edit-post', ['id' => $post[0]->id]) }}">
 		{{ csrf_field() }}
 			<div class="section"> 
 				<div class="field"> 
@@ -42,7 +42,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="Nama Barang" name="name"> 	
+								<input class="input" type="text" placeholder="asda" name="name"> 	
 							</div>
 						</div>
 					</div>
@@ -50,6 +50,7 @@
 				<div class="field">
 					<div class="label"> 
 						Jenis
+					</div>
 					<div class="control">
 						<label class="radio">
 						<input value="Lost" type="radio" name="type">
@@ -81,7 +82,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="e.g. Jawa Barat" name="province">	
+								<input class="input" type="text" placeholder="asdasd" name="province">	
 							</div>
 						</div>
 					</div>
@@ -171,7 +172,7 @@
 						<label class="label">Upload Foto Barang</label>
 						<div class="file is-primary">
 							<label class="file-label">
-							<input class="file-input" type="file" name="foto">
+							<input class="file-input" type="file" name="image" required>
 							<span class="file-cta">
 								<span class="file-label">
 								Upload
@@ -253,10 +254,10 @@
 				</div>
 				<div class="field is-grouped">
 					<div class="control">
-						<button type="submit" class="button is-link">Submit</button>
+							<button type="submit" class="button is-link">Submit</button>
 					</div>
 					<div class="control">
-						<a href="{{url('/')}}">
+						<a href="{{url('/dashboard')}}">
 							<button class="button is-link is-light">Cancel</button>
 						</a>
 					</div>
