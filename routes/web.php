@@ -25,9 +25,7 @@ Route::get('/post', function () {
     return view('pages/post');
 });
 
-Route::get('/dashboard', function () {
-    return view('pages/dashboard');
-})->name('dashboard')->middleware('auth');
+Route::get('/dashboard', 'HomeController@dummy1')->name('dashboard')->middleware('auth');
 
 Route::get('/profile', function () {
     return view('pages/profile');

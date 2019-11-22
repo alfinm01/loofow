@@ -4,43 +4,45 @@
 	Dashboard | Loofow
 @endsection
 
-@section('style')
-	.content {
-	    text-align: center;
-	}
-
-	.title {
-	    font-size: 84px;
-	}
-
-	.links > a {
-	    color: #636b6f;
-	    padding: 0 25px;
-	    font-size: 13px;
-	    font-weight: 600;
-	    letter-spacing: .1rem;
-	    text-decoration: none;
-	    text-transform: uppercase;
-	}
-
-	.m-b-md {
-	    margin-bottom: 30px;
-	}
-@endsection
-
 @section('content')
-	<div class="content">
-	    <div class="title m-b-md">
-	        Dashboard Page
-	    </div>
-
-	    <div class="links">
-	        <a href="{{ url('/search') }}">Search</a>
-	        <a href="{{ url('/post') }}">Post</a>
-	        <a href="{{ url('/login') }}">Login</a>
-	        <a href="{{ url('/register') }}">Register</a>
-	        <a href="{{ url('/dashboard') }}">Dashboard</a>
-	        <a href="{{ url('/create-post') }}">Create post</a>
-	    </div>
+	<div class="container">
+		<h1 class="title">Post yang Kamu Buat</h1>
+		<div class="table-container">
+			<table class="table is-fullwidth is-hoverable">
+				<thead>
+					<tr>
+						<th class="has-text-centered">No</th>
+						<th class="has-text-centered">Nama</th>
+						<th class="has-text-centered">Tipe</th>
+						<th class="has-text-centered">Tanggal Dibuat</th>
+						<th class="has-text-centered">Aksi</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach ($posts as $post)
+						<tr>
+							<td class="has-text-centered">0</td>
+							<td class="has-text-centered">{{ $post['name'] }}</td>
+							<td class="has-text-centered">{{ $post['type'] }}</td>
+							<td class="has-text-centered">{{ $post['date'] }}</td>
+							<td class="has-text-centered">
+								<button class="button is-info is-outlined">Lihat</button>
+								<button class="button is-primary is-outlined">Edit</button>
+								<button class="button is-danger is-outlined">Delete</button>
+							</td>
+						</tr>
+					@endforeach
+				</tbody>
+			</table>
+		</div>
+		<h1 class="title">Post yang Kamu Klaim</h1>
+		<div class="columns">
+			<div class="column justify-center">
+				1
+			</div>
+			<div class="column">
+				2
+			</div>
+		</div>
 	</div>
 @endsection
