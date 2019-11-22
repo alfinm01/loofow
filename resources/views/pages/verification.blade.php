@@ -31,26 +31,23 @@
 @section('content')
 <div class="container">
 	<p class="title is-1">Verification</p>
-    <h1 class="title is-5">Hewan apa ini?</h1> 
-<form class="verification-post-form" method="POST" action="{{ url('/claim-post') }}">
+    <h1 class="title is-5">{{ $verification[0]->question }}</h1> 
+<form class="verification-post-form" method="POST" action="{{ url('/claim-post/' . $verification[0]->post_id) }}">
 	{{ csrf_field() }}
-    <div class="control">
-		<input class="input" type="text" placeholder="post_id" name="post_id">	
-	</div>
     <div class="control">
   <label class="radio">
     <input value="a" type="radio" name="answer">
-    bebek
+	{{ $verification[0]->a }}
   </label>
   <br>
   <label class="radio">
     <input value="b" type="radio" name="answer">
-    angsa
+    {{ $verification[0]->b }}
   </label>
   <br>
   <label class="radio">
     <input value="c" type="radio" name="answer">
-    itik
+    {{ $verification[0]->c }}
   </label>
     </div>
     <div class="column">
