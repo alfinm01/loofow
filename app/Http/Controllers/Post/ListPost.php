@@ -34,7 +34,15 @@ class ListPost extends Controller {
         
         $postLost = DB::table('posts')->where('user_id', Auth::id())->where('type', '=', 'Lost')->orderBy('year', 'asc')->orderBy('month', 'asc')->orderBy('date', 'asc')->get();
         
+        $claims = DB::table('claims')->where('user_id', Auth::id())->get();
+        
+        $postClaim = [];
+
+        foreach ($claims as $key => $item) {
+            $postClaim[$key] = DB::table('posts')->where('id', $item->post_id)->orderBy('year', 'asc')->orderBy('month', 'asc')->orderBy('date', 'asc')->first();
+        }
+
         //Menampilkan hasil data dengan keywords tertentu
-        return view('pages/dashboard',['postFound' => $postFound, 'postLost' => $postLost]);
+        return view('pages/dashboard',['postFound' => $postFound, 'postLost' => $postLost, 'postClaim' => $postClaim]);
     }
 }

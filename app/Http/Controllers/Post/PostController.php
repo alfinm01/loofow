@@ -56,7 +56,7 @@ class PostController extends Controller
             DB::table('posts')->where('id', $request->id)->update([
                 'status' => true
             ]);
-            return redirect()->route('dashboard');
+            return redirect('dashboard');
             // return view('pages/dashboard');
         } else {
             $verification = DB::table('posts_verification')->where('post_id', $id)->get();
