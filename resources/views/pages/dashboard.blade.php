@@ -29,18 +29,188 @@
 @endsection
 
 @section('content')
-	<div class="content">
-	    <div class="title m-b-md">
-	        Dashboard Page
-	    </div>
+	<div class="container">
+        <div id="flow">
+            <span class="flow-1"></span>
+            <span class="flow-2"></span>
+            <span class="flow-3"></span>
+        </div>
+        <div class="section">
+			<div class="title is-1"> 
+				Dashboard <br> <br> 
+			</div> 
+			<div class="title is-3"> 
+				My Post <br> 
+			</div>
+			<div class="hero is-info is-small"> 
+				<div class="hero-body">
+					<div class="container"> 
+						<h1 class="title"> 
+							Lost
+						</h1>
+					</div>
+				</div>
+			</div>
+			<br>
+            <div class="row columns">
+                <div class="column is-one-third">
+					<div class="card large">
+						<div class="card-image">
+							<figure class="image">
+								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content">
+									<p class="title is-4 no-padding">Judul</p>
+									<p class="subtitle is-6">Tipe</p>
+								</div>
+							</div>
+							<div class="content">
+								Deskripsi
+							</div>
+							<nav class="level"> 
+								<div class="level-left">
+									<div class="level-item">
+										<button class="button is-black">See</button>
+									</div>
+									<div class="level-item">
+										<button class="button is-black">Edit</button>
+									</div>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+                <div class="column is-one-third">
+					<div class="card large">
+						<div class="card-image">
+							<figure class="image">
+								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content">
+									<p class="title is-4 no-padding">Judul</p>
+									<p class="subtitle is-6">Tipe</p>
+								</div>
+							</div>
+							<div class="content">
+								Deskripsi
+							</div>
+							<button class="button is-black">See</button>
+							</a>
+						</div>
+					</div>
+				</div>
+                <div class="column is-one-third">
+					<div class="card large">
+						<div class="card-image">
+							<figure class="image">
+								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content">
+									<p class="title is-4 no-padding">Judul</p>
+									<p class="subtitle is-6">Tipe</p>
+								</div>
+							</div>
+							<div class="content">
+								Deskripsi
+							</div>
+							<button class="button is-black">See</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><br>
+            <!-- End Developers -->
 
-	    <div class="links">
-	        <a href="{{ url('/search') }}">Search</a>
-	        <a href="{{ url('/post') }}">Post</a>
-	        <a href="{{ url('/login') }}">Login</a>
-	        <a href="{{ url('/register') }}">Register</a>
-	        <a href="{{ url('/dashboard') }}">Dashboard</a>
-	        <a href="{{ url('/create-post') }}">Create post</a>
-	    </div>
-	</div>
+            <!-- Staff -->
+			<div class="hero is-info is-small"> 
+				<div class="hero-body">
+					<div class="container"> 
+						<h1 class="title"> 
+							Found
+						</h1>
+					</div>
+				</div>
+			</div>
+			<br>
+            <div class="row columns">
+               <div class="column is-one-third">
+					<div class="card large">
+						<div class="card-image">
+							<figure class="image">
+								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content">
+									<p class="title is-4 no-padding">Judul</p>
+									<p class="subtitle is-6">Tipe</p>
+								</div>
+							</div>
+							<div class="content">
+								Deskripsi
+							</div>
+							<button class="button is-black">See</button>
+							</a>
+						</div>
+					</div>
+				</div>
+                <div class="column is-one-third">
+					<div class="card large">
+						<div class="card-image">
+							<figure class="image">
+								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content">
+									<p class="title is-4 no-padding">Judul</p>
+									<p class="subtitle is-6">Tipe</p>
+								</div>
+							</div>
+							<div class="content">
+								Deskripsi
+							</div>
+							<button class="button is-black">See</button>
+							</a>
+						</div>
+					</div>
+				</div>
+                <div class="column is-one-third">
+					<div class="card large">
+						<div class="card-image">
+							<figure class="image">
+								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content">
+									<p class="title is-4 no-padding">Judul</p>
+									<p class="subtitle is-6">Tipe</p>
+								</div>
+							</div>
+							<div class="content">
+								Deskripsi
+							</div>
+							<button class="button is-black">See</button>
+							</a>
+						</div>
+					</div>
+				</div>
+            </div>
+            <!-- End Staff -->
+        </div>
+    </div>
 @endsection
