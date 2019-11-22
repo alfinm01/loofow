@@ -59,7 +59,8 @@
 				</div>
 			</div>
 			<br>
-            <div class="row columns">
+            <div class="row columns is-multicolumns">
+				@foreach($postHLost as $post)
                 <div class="column is-one-third">
 					<div class="card large">
 						<div class="card-image">
@@ -70,66 +71,21 @@
 						<div class="card-content">
 							<div class="media">
 								<div class="media-content">
-									<p class="title is-4 no-padding">Judul</p>
-									<p class="subtitle is-6">Tipe</p>
+									<p class="title is-4 no-padding">{{ $post->name }}</p>
+									<p class="subtitle is-6">{{ $post->type }}</p>
 								</div>
 							</div>
 							<div class="content">
-								Deskripsi
+								{{ $post->description }}
 							</div>
 							<button class="button is-black">See</button>
 							</a>
 						</div>
 					</div>
 				</div>
-                <div class="column is-one-third">
-					<div class="card large">
-						<div class="card-image">
-							<figure class="image">
-								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 no-padding">Judul</p>
-									<p class="subtitle is-6">Tipe</p>
-								</div>
-							</div>
-							<div class="content">
-								Deskripsi
-							</div>
-							<button class="button is-black">See</button>
-							</a>
-						</div>
-					</div>
-				</div>
-                <div class="column is-one-third">
-					<div class="card large">
-						<div class="card-image">
-							<figure class="image">
-								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 no-padding">Judul</p>
-									<p class="subtitle is-6">Tipe</p>
-								</div>
-							</div>
-							<div class="content">
-								Deskripsi
-							</div>
-							<button class="button is-black">See</button>
-							</a>
-						</div>
-					</div>
-				</div>
+				@endforeach
 			</div>
-            <!-- End Developers -->
-
-            <!-- Staff -->
+			<br>
 			<div class="hero is-info"> 
 				<div class="hero-body">
 					<div class="container"> 
@@ -140,29 +96,8 @@
 				</div>
 			</div>
 			<br>
-            <div class="row columns">
-               <div class="column is-one-third">
-					<div class="card large">
-						<div class="card-image">
-							<figure class="image">
-								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 no-padding">Judul</p>
-									<p class="subtitle is-6">Tipe</p>
-								</div>
-							</div>
-							<div class="content">
-								Deskripsi
-							</div>
-							<button class="button is-black">See</button>
-							</a>
-						</div>
-					</div>
-				</div>
+            <div class="row columns is-multicolumns">
+				@foreach($postHFound as $post)
                 <div class="column is-one-third">
 					<div class="card large">
 						<div class="card-image">
@@ -173,42 +108,20 @@
 						<div class="card-content">
 							<div class="media">
 								<div class="media-content">
-									<p class="title is-4 no-padding">Judul</p>
-									<p class="subtitle is-6">Tipe</p>
+									<p class="title is-4 no-padding">{{ $post->name }}</p>
+									<p class="subtitle is-6">{{ $post->type }}</p>
 								</div>
 							</div>
 							<div class="content">
-								Deskripsi
+								{{ $post->description }}
 							</div>
 							<button class="button is-black">See</button>
 							</a>
 						</div>
 					</div>
 				</div>
-                <div class="column is-one-third">
-					<div class="card large">
-						<div class="card-image">
-							<figure class="image">
-								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 no-padding">Judul</p>
-									<p class="subtitle is-6">Tipe</p>
-								</div>
-							</div>
-							<div class="content">
-								Deskripsi
-							</div>
-							<button class="button is-black">See</button>
-							</a>
-						</div>
-					</div>
-				</div>
-            </div>
-            <!-- End Staff -->
+				@endforeach
+			</div>
         </div>
     </div>
 @endsection
