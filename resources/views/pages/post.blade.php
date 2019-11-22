@@ -49,6 +49,7 @@
 			<p class="subtitle is-5"><strong>Model:</strong> {{ $post[0]->model }}</p>
 		</div>
 		<div class="column">
+			<p class="subtitle is-5"><strong>ID Barang:</strong> {{ $post[0]->id }}</p>
 			<p class="subtitle is-5"><strong>Deskripsi:</strong></p>
 			<p class="subtitle is-5">{{ $post[0]->description }}</p>
 			<div class="buttons">
