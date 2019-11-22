@@ -32,7 +32,7 @@
 <div class="container">
 	<p class="title is-1">Edit your Post</p>
 	<div class="container"> 
-		<form class="edit-post-form" method="POST" action="{{ route('edit-post', ['id' => $post[0]->id]) }}">
+		<form class="edit-post-form" method="POST" action="{{ route('edit-post', ['id' => $post[0]->id]) }}" enctype="multipart/form-data">
 		{{ csrf_field() }}
 			<div class="section"> 
 				<div class="field"> 
@@ -42,7 +42,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="asda" name="name"> 	
+								<input class="input" type="text" placeholder="asda" name="name" required> 	
 							</div>
 						</div>
 					</div>
@@ -82,7 +82,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="asdasd" name="province">	
+								<input class="input" type="text" placeholder="asdasd" name="province" required >	
 							</div>
 						</div>
 					</div>
@@ -92,7 +92,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="e.g. Bandung" name="city">	
+								<input class="input" type="text" placeholder="e.g. Bandung" name="city" required>	
 							</div>
 						</div>
 					</div>
@@ -102,7 +102,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="e.g. Cisitu" name="district">	
+								<input class="input" type="text" placeholder="e.g. Cisitu" name="district" required>	
 							</div>
 						</div>
 					</div>
@@ -148,7 +148,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="e.g. Biru" name="color">	
+								<input class="input" type="text" placeholder="e.g. Biru" name="color" required>	
 							</div>
 						</div>
 					</div>
@@ -158,14 +158,14 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="e.g. Samsung" name="model">	
+								<input class="input" type="text" placeholder="e.g. Samsung" name="model" required>	
 							</div>
 						</div>
 					</div>
 					<div class="field">
 						<label class="label">Deskripsi</label>
 						<div class="control">
-							<textarea class="textarea" placeholder="Deskripsi" name="description"></textarea>
+							<textarea class="textarea" placeholder="Deskripsi" name="description" required></textarea>
 						</div>
 					</div>
 					<div class="field">
@@ -187,7 +187,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="e.g. HP" name="contact_type">	
+								<input class="input" type="text" placeholder="e.g. HP" name="contact_type" required>	
 							</div>
 						</div>
 					</div>
@@ -197,7 +197,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="e.g. 08111111111" name="contact">	
+								<input class="input" type="text" placeholder="e.g. 08111111111" name="contact" required>	
 							</div>
 						</div>
 					</div>
@@ -207,7 +207,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="Pertanyaan" name="question">	
+								<input class="input" type="text" placeholder="Pertanyaan" name="question" required>	
 							</div>
 						</div>
 					</div>
@@ -217,7 +217,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="Pilihan" name="a">	
+								<input class="input" type="text" placeholder="Pilihan" name="a" required>	
 							</div>
 						</div>
 					</div>
@@ -227,7 +227,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="Pilihan" name="b">	
+								<input class="input" type="text" placeholder="Pilihan" name="b" required>	
 							</div>
 						</div>
 					</div>
@@ -237,7 +237,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="Pilihan" name="c">	
+								<input class="input" type="text" placeholder="Pilihan" name="c" required>	
 							</div>
 						</div>
 					</div>
@@ -247,7 +247,7 @@
 					<div class="level"> 
 						<div class="level-left">
 							<div class="control">
-								<input class="input" type="text" placeholder="Pilihan Benar" name="answer">	
+								<input class="input" type="text" placeholder="Pilihan Benar" name="answer" required>	
 							</div>
 						</div>
 					</div>
