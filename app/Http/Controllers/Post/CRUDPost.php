@@ -67,25 +67,24 @@ class CRUDPost extends Controller {
 
     //function ini akan dijalankan ketika akan dilakukan pembaruan data
     public function updatePost (Request $request, $id) {
-		/*dd($request);
 		//setting image dengan asumsi bahwa gambar required
         // Get image file
         $image = $request->file('image');
         // Make a image name based on user name and current timestamp
         $name = Str::slug($request->input('name')).'_'.time();
         // Define folder path
-        $folder = '/uploads/images/';
+        $folder = 'uploads/images/';
         // Make a file path where image will be stored [ folder path + file name + file extension]
         $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
         // Upload image
-        $this->uploadOne($image, $folder, 'public', $name);*/
+        $image->move($folder, $filePath);
         
 
         //ambil data dari frontend
         DB::table('posts')->where('id', $id)->update([
             'user_id' => Auth::id(),
             'name' => $request->name,
-            //'image' => $filePath,
+            'image' => $filePath,
             'type' => $request->type,
             'category' => $request->category,
             'province' => $request->province,
