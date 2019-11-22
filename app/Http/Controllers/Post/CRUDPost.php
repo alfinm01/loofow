@@ -5,30 +5,29 @@ namespace App\Http\Controllers\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Auth;
 
 
 class CRUDPost extends Controller {
     public function create(Request $request) {
-        /*
         //setting image dengan asumsi bahwa gambar required
         // Get image file
-        $image = $request->file('item_image');
+        $image = $request->file('image');
         // Make a image name based on user name and current timestamp
         $name = Str::slug($request->input('name')).'_'.time();
         // Define folder path
-        $folder = '/uploads/images/';
+        $folder = 'uploads/images/';
         // Make a file path where image will be stored [ folder path + file name + file extension]
         $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
         // Upload image
-        $this->uploadOne($image, $folder, 'public', $name);
-        */
+        $image->move($folder, $filePath);
 
         //ambil data dari frontend
         DB::table('posts')->insert([
             'user_id' => Auth::id(),
             'name' => $request->name,
-            //'image' => $filePath,
+            'image' => $filePath,
             'type' => $request->type,
             'category' => $request->category,
             'province' => $request->province,
@@ -53,6 +52,11 @@ class CRUDPost extends Controller {
             'answer' => $request->answer,
         ]);
 
+
+        if ($request->hasFile('image')) {
+            dd("Berhasil bangsat");
+        }
+
         //redirect ke halaman dimana pengguna dapat melihat postnya
         return redirect('dashboard');
     }
@@ -63,7 +67,7 @@ class CRUDPost extends Controller {
 	    $post = DB::table('posts')->where('id',$id)->get();
         
         //passing data ke front-end 
-	    return view('update',['posts' => $post]);
+	    return view('/pages/edit-post',['posts' => $post]);
     }
 
     //function ini akan dijalankan ketika akan dilakukan pembaruan data
