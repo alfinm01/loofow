@@ -10,7 +10,6 @@ use Auth;
 
 class CRUDPost extends Controller {
     public function create(Request $request) {
-        //ambil data dari frontend
         DB::table('posts')->insert([
             'user_id' => Auth::id(),
             'name' => $request->name,
@@ -36,7 +35,7 @@ class CRUDPost extends Controller {
     //function yang dijalankan ketika button edit ditekan
     public function editRespons($id) {
         //ambil data dari id yang udah dipilih
-	    $post = DB::table('post')->where('id',$id)->get();
+	    $post = DB::table('posts')->where('id',$id)->get();
         
         //passing data ke front-end 
 	    return view('update',['post' => $post]);
@@ -67,9 +66,17 @@ class CRUDPost extends Controller {
 
     public function deletePost($id) {
         //Delete atribut dengan melihat id
-        DB::table('post')->where('id', $id)->delete();
+        DB::table('posts')->where('id', $id)->delete();
 
         //mengembalikan view
         return redirect('/dashboard');
+    }
+
+    public function getById($id) {
+        //ambil data dari id yang udah dipilih
+	    $post = DB::table('posts')->where('id',$id)->get();
+        
+        //passing data ke front-end 
+	    return view('/pages/post', ['post' => $post]);
     }
 }

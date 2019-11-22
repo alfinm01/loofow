@@ -52,11 +52,11 @@
 						Jenis
 					<div class="control">
 						<label class="radio">
-						<input type="radio" name="type">
+						<input value="Lost" type="radio" name="type">
 						Lost
 						</label>
 						<label class="radio">
-						<input type="radio" name="type">
+						<input value= "Found" type="radio" name="type">
 						Found
 						</label>
 					</div>
@@ -162,6 +162,19 @@
 						<label class="label">Deskripsi</label>
 						<div class="control">
 							<textarea class="textarea" placeholder="Deskripsi" name="description"></textarea>
+						</div>
+					</div>
+					<div class="field">
+						<label class="label">Upload Foto Barang</label>
+						<div class="file is-primary">
+							<label class="file-label">
+							<input class="file-input" type="file" name="foto">
+							<span class="file-cta">
+								<span class="file-label">
+								Upload
+								</span>
+							</span>
+							</label>
 						</div>
 					</div>
 					<div class="label">	

@@ -30,8 +30,8 @@
 
 @section('content')
 <div class="container">
-	<p class="title is-1">Nama Barang</p>
-	<p class="subtitle is-3">Kategori</p>
+	<p class="title is-1">{{ $post[0]->name }}</p>
+	<p class="subtitle is-3">{{ $post[0]->category }}</p>
 	<div class="columns">
 		<div class="column is-one-third">
 			<figure class="image is square">
@@ -39,28 +39,16 @@
 			</figure>
 		</div>
 		<div class="column">
-			<p class="subtitle is-5"><strong>Provinsi:</strong> Jawa Barat</p>
-			<p class="subtitle is-5"><strong>Kota:</strong> Bandung</p>
-			<p class="subtitle is-5"><strong>Jalan:</strong> Cisitu</p>
-			<p class="subtitle is-5"><strong>Tanggal Ditemukan/Hilang:</strong> tgl-bulan-tahun</p>
-			<p class="subtitle is-5"><strong>Deskripsi:</strong></p>
-			<p class="subtitle is-5">Blablablabla</p>
+			<p class="subtitle is-5"><strong>Provinsi:</strong> {{ $post[0]->province }}</p>
+			<p class="subtitle is-5"><strong>Kota:</strong> {{ $post[0]->city }}</p>
+			<p class="subtitle is-5"><strong>Jalan:</strong> {{ $post[0]->district }}</p>
+			<p class="subtitle is-5"><strong>Tanggal Ditemukan/Hilang:</strong> {{ $post[0]->date }}-{{ $post[0]->month }}-{{ $post[0]->year }}</p>
+			<p class="subtitle is-5"><strong>Warna:</strong> {{ $post[0]->color }}</p>
+			<p class="subtitle is-5"><strong>Model:</strong> {{ $post[0]->model }}</p>
 		</div>
 		<div class="column">
-			<div class="tile is-ancestor">
-				<div class="tile is-vertical is-8">
-					<div class="tile">
-					<div class="tile is-parent is-vertical">
-						<article class="tile is-child notification is-primary">
-						<p class="title">Kontak Penemu</p>
-						<p class="text has-text-weight-bold">Nama User</p>
-						<p class="text">Jenis</p>
-						<p class="text">Id/Nomor</p>
-						</article>
-					</div>
-					</div>
-				</div>
-			</div>
+			<p class="subtitle is-5"><strong>Deskripsi:</strong></p>
+			<p class="subtitle is-5">{{ $post[0]->description }}</p>
 			<div class="buttons">
 				<button class="button is-warning"><strong>Claim</strong></button>
 			</div>
