@@ -39,10 +39,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/claim-post/{id}', 'PostController@claimPosts')->middleware('auth');
 
-<<<<<<< HEAD
-Route::get('/get-claimed-post', 'PostController@getClaimedPosts')->middleware('auth');
-=======
 Route::get('/get-claimed-post', 'PostController@getClaimedPosts');
 
 Route::get('/edit-post/{id}', 'Post\CRUDPost@editRespons')->name('edit-post');
->>>>>>> 102c487d14dfbe387023a53c5b9ad25b93c00a8f
