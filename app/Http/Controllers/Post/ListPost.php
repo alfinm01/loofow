@@ -11,7 +11,7 @@ use Auth;
 class ListPost extends Controller {
     public function listAllItems() {
         //ambil data
-        $postHLost = DB::table('posts')->where('type', '=' , 'Lost')->where('status', '=' , '0')->orderBy('year', 'asc')->orderBy('month', 'asc')->orderBy('date', 'asc')->get();
+        $postHLost = DB::table('posts')->where('type', '=' , 'Lost')->where('status', '=' , '0')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('date', 'desc')->get();
 
         $postHFound = DB::table('posts')->where('type', '=' , 'Found')->where('status', '=' , '0')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('date', 'desc')->get();
 
@@ -21,7 +21,7 @@ class ListPost extends Controller {
 
     public function listByKeywords(Request $request) {
         //ambil data dengan keyword tertentu
-        $post = DB::table('posts')->where('name', 'like', '%' . $request->keyword . '%')->where('status', '=' , '0')->get();
+        $post = DB::table('posts')->where('name', 'like', '%' . $request->keyword . '%')->where('status', '=' , '0')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('date', 'desc')->get();
 
         //Menampilkan hasil data dengan keywords tertentu
         return view('pages/search',['posts' => $post, 'keyword' => $request->keyword]);
@@ -29,9 +29,9 @@ class ListPost extends Controller {
 
     public function listByUser() {
         //ambil data berdasarkan user_id
-        $postFound = DB::table('posts')->where('status', '=' , '0')->where('user_id', Auth::id())->where('type', '=', 'Found')->orderBy('year', 'asc')->orderBy('month', 'asc')->orderBy('date', 'asc')->get();
+        $postFound = DB::table('posts')->where('status', '=' , '0')->where('user_id', Auth::id())->where('type', '=', 'Found')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('date', 'desc')->get();
         
-        $postLost = DB::table('posts')->where('status', '=' , '0')->where('user_id', Auth::id())->where('type', '=', 'Lost')->orderBy('year', 'asc')->orderBy('month', 'asc')->orderBy('date', 'asc')->get();
+        $postLost = DB::table('posts')->where('status', '=' , '0')->where('user_id', Auth::id())->where('type', '=', 'Lost')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('date', 'desc')->get();
         
         //Menampilkan hasil data dengan keywords tertentu
         return view('pages/dashboard',['postFound' => $postFound, 'postLost' => $postLost]);
