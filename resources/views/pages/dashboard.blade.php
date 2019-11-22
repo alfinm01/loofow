@@ -52,44 +52,65 @@
 				</div>
 			</div>
 			<br>
-            <div class="row columns is-multicolumn">
-				@foreach ($postLost as $post)
-                <div class="column is-one-third">
-					<div class="card large">
-						<div class="card-image">
-							<figure class="image">
-								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 no-padding">{{ $post->name }}</p>
-									<p class="subtitle is-6">{{ $post->type }}</p>
+			@foreach ($postLost as $key => $post)
+				@if ($key % 3 == 0)
+				<div class="row columns">
+				@endif
+			@endforeach
+			@foreach ($postLost as $key => $post)
+					<div class="column is-one-third">
+						<div class="card large">
+							<div class="card-image">
+								<figure class="image">
+									<img src="{{ url($post->image) }}" alt="Image">
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<div class="media-content">
+										<p class="title is-4 no-padding">{{ $post->name }}</p>
+										<p class="subtitle is-6">{{ $post->type }}</p>
+									</div>
 								</div>
-							</div>
-							<div class="content">
-								{{ $post->description }}
-							</div>
-							<nav class="level"> 
+								<div class="content">
+									{{ $post->description }}
+								</div>
+								<nav class="level"> 
+
 								<div class="level-left">
+
 									<div class="level-item">
+
 										<a href="{{url('/post/' . $post->id)}}">
-											<button class="button is-black">See</button>
+
+											<button class="button is-black">Details</button>
+
 										</a>
+
 									</div>
+
 									<div class="level-item">
+
 										<a href="{{url('/edit-post/' . $post->id)}}">
+
 											<button class="button is-black">Edit</button>
+
 										</a>
+
 									</div>
+
 								</div>
+
 							</nav>
+							</div>
 						</div>
 					</div>
+			@endforeach
+			@foreach ($postLost as $key => $post)
+			@if ($key % 3 == 0)
 				</div>
-				@endforeach
-			</div>
+				@endif
+			@endforeach
 			<br>
 			<div class="hero is-info is-small"> 
 				<div class="hero-body">
@@ -107,7 +128,7 @@
 					<div class="card large">
 						<div class="card-image">
 							<figure class="image">
-								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
+							<img src="{{ url($post->image) }}" alt="Image">
 							</figure>
 						</div>
 						<div class="card-content">
@@ -124,7 +145,7 @@
 								<div class="level-left">
 									<div class="level-item">
 										<a href="{{url('/post/' . $post->id)}}">
-											<button class="button is-black">See</button>
+											<button class="button is-black">Details</button>
 										</a>
 									</div>
 									<div class="level-item">

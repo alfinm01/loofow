@@ -65,7 +65,7 @@
 					<div class="card large">
 						<div class="card-image">
 							<figure class="image">
-								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
+							<img src="{{ url($post->image) }}" alt="Image">
 							</figure>
 						</div>
 						<div class="card-content">
@@ -78,8 +78,11 @@
 							<div class="content">
 								{{ $post->description }}
 							</div>
-							<button class="button is-black">See</button>
-							</a>
+							<a href="{{url('/post/' . $post->id)}}">
+
+											<button class="button is-black">Details</button>
+
+										</a>
 						</div>
 					</div>
 				</div>
@@ -102,7 +105,7 @@
 					<div class="card large">
 						<div class="card-image">
 							<figure class="image">
-								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
+							<img src="{{ url($post->image) }}" alt="Image">
 							</figure>
 						</div>
 						<div class="card-content">
@@ -115,7 +118,10 @@
 							<div class="content">
 								{{ $post->description }}
 							</div>
-							<button class="button is-black">See</button>
+							<a href="{{url('/post/' . $post->id)}}">
+
+											<button class="button is-black">Details</button>
+
 							</a>
 						</div>
 					</div>

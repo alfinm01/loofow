@@ -46,36 +46,33 @@
 	</div>
 	<h1 class="title">Search Results</h1>
 	<h2 class="subtitle">"{{ $keyword }}"</h2>
+    <div class="row columns is-multicolumns">
     @foreach ($posts as $post)
-        @if ($posts->count() % 3 == 0)
-        <div class="row columns">
-        @endif
-            <div class="column is-one-third">
-                <div class="card large">
-                    <div class="card-image">
-                        <figure class="image">
-                            <img src="{{ url($post->image) }}" alt="Image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-content">
-                                <p class="title is-4 no-padding">{{ $post->name }}</p>
-                                <p class="subtitle is-6">{{ $post->type }}</p>
-                            </div>
-                        </div>
-                        <div class="content">
-                            {{ $post->description }}
-                        </div>
-                        <a href="{{url('/post/' . $post->id)}}">
-                         <button class="button is-black">See</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        @if ($posts->count() % 3 == 0)
-        </div>
-        @endif
+    <div class="column is-one-third">
+					<div class="card large">
+						<div class="card-image">
+							<figure class="image">
+							<img src="{{ url($post->image) }}" alt="Image">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content">
+									<p class="title is-4 no-padding">{{ $post->name }}</p>
+									<p class="subtitle is-6">{{ $post->type }}</p>
+								</div>
+							</div>
+							<div class="content">
+								{{ $post->description }}
+							</div>
+							<a href="{{url('/post/' . $post->id)}}">
+
+											<button class="button is-black">Details</button>
+
+							</a>
+						</div>
+					</div>
+				</div>
     @endforeach
 </div>
 @endsection
