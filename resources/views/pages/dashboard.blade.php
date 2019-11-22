@@ -61,7 +61,7 @@
 					<div class="column is-one-third">
 						<div class="card large">
 							<div class="card-image">
-								<figure class="image">
+								<figure class="image is square">
 									<img src="{{ url($post->image) }}" alt="Image">
 								</figure>
 							</div>
@@ -127,7 +127,7 @@
                 <div class="column is-one-third">
 					<div class="card large">
 						<div class="card-image">
-							<figure class="image">
+							<figure class="image is square">
 							<img src="{{ url($post->image) }}" alt="Image">
 							</figure>
 						</div>
@@ -176,8 +176,8 @@
                 <div class="column is-one-third">
 					<div class="card large">
 						<div class="card-image">
-							<figure class="image">
-								<img src="https://www.memecomic.id/data/articleimage/33696b4b4af5f39030bb2807beb075e4.png" alt="Image">
+							<figure class="image is square">
+							<img src="{{ url($post->image) }}" alt="Image">
 							</figure>
 						</div>
 						<div class="card-content">

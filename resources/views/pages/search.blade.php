@@ -51,7 +51,7 @@
     <div class="column is-one-third">
 					<div class="card large">
 						<div class="card-image">
-							<figure class="image">
+							<figure class="image is square">
 							<img src="{{ url($post->image) }}" alt="Image">
 							</figure>
 						</div>
