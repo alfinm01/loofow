@@ -23,6 +23,7 @@ class CRUDPost extends Controller {
         // Upload image
         $this->uploadOne($image, $folder, 'public', $name);
         */
+
         //ambil data dari frontend
         DB::table('posts')->insert([
             'user_id' => Auth::id(),
@@ -62,12 +63,12 @@ class CRUDPost extends Controller {
 	    $post = DB::table('posts')->where('id',$id)->get();
         
         //passing data ke front-end 
-	    return view('update',['post' => $post]);
+	    return view('update',['posts' => $post]);
     }
 
     //function ini akan dijalankan ketika akan dilakukan pembaruan data
     public function updatePost (Request $request) {
-        DB::table('post')->where('id', $request->id)->update([
+        DB::table('posts')->where('id', $request->id)->update([
             'name' => $request->name,
             'type' => $request->type,
             'category' => $request->category,
