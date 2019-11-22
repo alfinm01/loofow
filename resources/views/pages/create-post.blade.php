@@ -285,7 +285,7 @@
 						<button type="submit" class="button is-link">Submit</button>
 					</div>
 					<div class="control">
-						<a href="{{url('/')}}">
+						<a href="{{url('/dashboard')}}">
 							<button class="button is-link is-light">Cancel</button>
 						</a>
 					</div>

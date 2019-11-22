@@ -62,13 +62,30 @@ class CRUDPost extends Controller {
 	    $post = DB::table('posts')->where('id',$id)->get();
         
         //passing data ke front-end 
-	    return view('/pages/edit-post',['posts' => $post]);
+	    return view('/pages/edit-post',['post' => $post]);
     }
 
     //function ini akan dijalankan ketika akan dilakukan pembaruan data
-    public function updatePost (Request $request) {
-        DB::table('posts')->where('id', $request->id)->update([
+    public function updatePost (Request $request, $id) {
+		/*dd($request);
+		//setting image dengan asumsi bahwa gambar required
+        // Get image file
+        $image = $request->file('image');
+        // Make a image name based on user name and current timestamp
+        $name = Str::slug($request->input('name')).'_'.time();
+        // Define folder path
+        $folder = '/uploads/images/';
+        // Make a file path where image will be stored [ folder path + file name + file extension]
+        $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
+        // Upload image
+        $this->uploadOne($image, $folder, 'public', $name);*/
+        
+
+        //ambil data dari frontend
+        DB::table('posts')->where('id', $id)->update([
+            'user_id' => Auth::id(),
             'name' => $request->name,
+            //'image' => $filePath,
             'type' => $request->type,
             'category' => $request->category,
             'province' => $request->province,
@@ -81,11 +98,20 @@ class CRUDPost extends Controller {
             'color' => $request->color,
             'model' => $request->model,
             'contact_type' => $request->contact_type,
-            'contact' => $request->contact
+            'contact' => $request->contact,
         ]);
 
-        //mengembalikan ke tampilan dashboard
-        return redirect('/dashboard');
+        DB::table('posts_verification')->where('post_id', $id)->update([
+            'id' => Auth::id(),
+            'question' => $request->question,
+            'a' => $request->a,
+            'b' => $request->b,
+            'c' => $request->c,
+            'answer' => $request->answer,
+        ]);
+
+        //redirect ke halaman dimana pengguna dapat melihat postnya
+        return redirect('dashboard');
     }
 
     public function deletePost($id) {
