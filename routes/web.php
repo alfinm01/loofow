@@ -25,6 +25,10 @@ Route::get('/dashboard', function () {
     return view('pages/dashboard');
 })->name('dashboard')->middleware('auth');
 
+Route::post('/dashboard', function () {
+    return view('pages/dashboard');
+})->name('dashboard')->middleware('auth');
+
 Route::get('/profile', function () {
     return view('pages/profile');
 })->middleware('auth');
@@ -35,8 +39,13 @@ Route::get('/create-post', function () {
     return view('pages/create-post');
 })->middleware('auth');
 
+Route::post('/verification', function () {
+    return view('pages/verification');
+});
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/claim-post', 'PostController@claimPosts');
+Route::post('/claim-post', 'PostController@claimPosts');
 
 Route::get('/get-claimed-post', 'PostController@getClaimedPosts');

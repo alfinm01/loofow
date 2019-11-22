@@ -43,6 +43,7 @@ class PostController extends Controller
 
     public function claimPosts(Request $request)
     {
+        
         $real_answer = DB::table('posts_verification')->where('post_id',$request->post_id)->value('answer');
 
         if ($real_answer == $request->answer)
@@ -51,7 +52,7 @@ class PostController extends Controller
                 'success'   => true,
                 'data'      => 'Claim success',
             ];
-            return response()->json($response, 200);
+            return view('pages/dashboard');
         } else {
             $response = [
                 'success'   => false,

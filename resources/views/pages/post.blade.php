@@ -32,6 +32,8 @@
 <div class="container">
 	<p class="title is-1">{{ $post[0]->name }}</p>
 	<p class="subtitle is-3">{{ $post[0]->category }}</p>
+	<form class="post-form" method="POST" action="{{ url('/verification') }}">
+	{{ csrf_field() }}
 	<div class="columns">
 		<div class="column is-one-third">
 			<figure class="image is square">
@@ -50,10 +52,11 @@
 			<p class="subtitle is-5"><strong>Deskripsi:</strong></p>
 			<p class="subtitle is-5">{{ $post[0]->description }}</p>
 			<div class="buttons">
-				<button class="button is-warning"><strong>Claim</strong></button>
+				<button type="submit" class="button is-warning"><strong>Claim</strong></button>
 			</div>
 		</div>
 	</div>
+	</form>
 </div>
 
 @endsection
