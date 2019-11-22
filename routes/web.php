@@ -21,7 +21,7 @@ Route::get('/search', 'Post\ListPost@listByKeywords');
 
 Route::get('/post/{id}', 'Post\CRUDPost@getById');
 
-Route::get('/dashboard', 'Post\ListPost@listByUserFound');
+Route::get('/dashboard', 'Post\ListPost@listByUser');
     
 
 Route::get('/profile', function () {
@@ -45,4 +45,4 @@ Route::post('/claim-post', 'PostController@claimPosts');
 
 Route::get('/get-claimed-post', 'PostController@getClaimedPosts');
 
-Route::get('/edit-post/{id}', 'Post\CRUDPost@editRespons');
+Route::put('/edit-post/{id}', 'Post\CRUDPost@editRespons')->name('edit-post');

@@ -29,32 +29,12 @@ class ListPost extends Controller {
 
     public function listByUser() {
         //ambil data berdasarkan user_id
-<<<<<<< HEAD
-        $post = DB::table('posts')->where('user_id', Auth::id())->get();
 
-        //Menampilkan hasil data dengan keywords tertentu
-        return view('dashboard',['posts' => $post]);
-    }
-
-    public function listByUserFound() {
-        //ambil data berdasarkan user_id
-        $post = DB::table('posts')->where('user_id', Auth::id())->where('type', '=', 'Found')->get();
-
-        //Menampilkan hasil data dengan keywords tertentu
-        return view('pages/dashboard',['posts' => $post]);
-    }
-
-    public function listByUserLost() {
-        //ambil data berdasarkan user_id
-        $post = DB::table('posts')->where('user_id', Auth::id())->where('type', '=', 'Lost')->get();
-
-=======
         $postFound = DB::table('posts')->where('user_id', Auth::id())->where('type', '=', 'Found')->orderBy('year', 'asc')->orderBy('month', 'asc')->orderBy('date', 'asc')->get();
         
         $postLost = DB::table('posts')->where('user_id', Auth::id())->where('type', '=', 'Lost')->orderBy('year', 'asc')->orderBy('month', 'asc')->orderBy('date', 'asc')->get();
         
->>>>>>> luth_crud
         //Menampilkan hasil data dengan keywords tertentu
-        return view('dashboard',['postsFound' => $postFound, 'postsLost' => $postLost]);
+        return view('pages/dashboard',['postFound' => $postFound, 'postLost' => $postLost]);
     }
 }
